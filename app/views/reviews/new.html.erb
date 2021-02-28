@@ -1,79 +1,76 @@
 
-<!-- 口コミ入力フォーム -->
 
-<%= form_with model: [@review], class: 'form', local: true do |f| %>
+<div class= "page-title">
+  <h1>レビュー投稿</h1>
+</div>
 
-  <!--エラーメッセージ-->
-  <%# <%= render 'layouts/error_messages', model: f.object %> 
-
-  <!--商品コードの送信-->
-  <%# <%= f.hidden_field :product_id, { value: product.id} %> 
-
-  <!-- タイトル -->
+<%= form_with(model: @review, local: true) do |f| %>
   <div class="form-group row">
-  
-    <%= f.label :title, '店名', class:'col-md-3 col-form-label' %>
-    <div class="col-md-9">
-      <%# <%= f.text_field :title, class: "form-control" %> 
-    </div>
-  </div>
+    <%= f.label :shop_name, '店名', class:'shop_name' %>
+      <%= f.text_field :shop_name, class: "form-control" %> 
+  </div> 
 
-  <!-- 評価 -->
-  <h2 class = "text-middle">総合評価</h2>
-  <div class="form-group row" id="star">
-    <%= f.label :rate,'評価 ', class:'col-md-3 col-form-label' %> 
-    <%= f.hidden_field :rate, id: :review_star %>
+
+  <div id="evaluate_stars">
+    <label>総合評価</label>
   </div>
 
   <!-- 口コミ -->
   <div class="form-group row">
-    <%= f.label :content, '口コミ内容 ', class:'col-md-3 col-form-label' %>
-    <div class="col-md-9">
-      <%= f.text_area :comment, class: "form-control", rows: "8",
-        placeholder:'口コミ内容がなくても、タイトルと評価のみで投稿できます。
-まずは投稿してみましょう！投稿してから編集もできますよ！' %>
-    </div>
+    <div class="col-md-9"> 
+      <%= f.text_area :comment, class: "form-control", rows: "8", placeholder:'口コミ内容がなくても、タイトルと評価のみで投稿できます。まずは投稿してみましょう！投稿してから編集もできますよ！' %>
+    </div> 
+  </div> 
+
+
+<h2>詳細評価</h2>
+  <div id="evaluate_stars">
+    <label>雰囲気</label>
   </div>
 
-
-  <h2 class = "text-middle">詳細評価</h2>
-  <dt class = "color-gray-light">雰囲気</dt>
-  <dd>
-  </dd>
-
-  <dt class = "color-gray-light">ネット環境</dt>
-  <dd>
-  </dd>
-
-  <dt class = "color-gray-light">店内設備・清潔さ</dt>
-  <dd>
-  </dd>
-
-  <dt class = "color-gray-light">混雑度</dt>
-  <dd>
-  </dd>
-
-  <dt class = "color-gray-light">コロナ対策</dt>
-  <dd>
-  </dd>
-
-  <div class="form-group row" id="star">
-    <%= f.label :rate,'評価 ', class:'col-md-3 col-form-label' %> 
-    <%= f.hidden_field :rate, id: :review_star %>
+  <div id="evaluate_stars">
+    <label>ネット環境</label>
   </div>
 
+  <div id="evaluate_stars">
+    <label>店内設備・清潔さ</label>
+  </div>
 
+  <div id="evaluate_stars">
+    <label>混雑度</label>
+  </div>
 
-  <!-- 評価javascript -->
-  
+  <div id="evaluate_stars">
+    <label>コロナ対策</label>
+  </div>
 
+  <div class="form-group row">
+    <%# <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %> 
+  </div>
 
-  <!-- 確認ボタン -->
   <div class="form-group row justify-content-end">
     <div class="col-md-9">
-      <%= f.submit '投稿する', class:"btn btn-success" %>
-    </div>
-  </div>
-
+       <%= f.submit '投稿する', class:"btn btn-success" %>
+    </div>  
+  </div> 
 <% end %>
+
+<script>
+  $('#evaluate_stars').raty({
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    scoreName: 'movie[evaluation]' //登録するモデル名とカラム名を記述
+  });
+</script>
+
+
+
 <!-- /口コミ入力フォーム -->
+
+
+
+
+
+
+

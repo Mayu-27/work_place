@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-
+    @review
   end
 
   def show
