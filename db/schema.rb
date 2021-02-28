@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_27_115029) do
+ActiveRecord::Schema.define(version: 2021_02_28_035156) do
+
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.float "overall_evaluation", null: false
+    t.text "comment"
+    t.float "atmosphere", null: false
+    t.float "network_stability", null: false
+    t.float "facility", null: false
+    t.float "congestion", null: false
+    t.float "corona_countermeasure", null: false
+    t.integer "client_id", null: false
+    t.bigint "user_id"
+    t.bigint "spot_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["spot_id"], name: "index_reviews_on_spot_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "spots", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "shop_name", limit: 255, null: false
