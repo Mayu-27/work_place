@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_035156) do
+ActiveRecord::Schema.define(version: 2021_03_01_034231) do
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.float "overall_evaluation", null: false
@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 2021_02_28_035156) do
     t.float "congestion", null: false
     t.float "corona_countermeasure", null: false
     t.integer "client_id", null: false
-    t.bigint "user_id"
     t.bigint "spot_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
     t.index ["spot_id"], name: "index_reviews_on_spot_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -60,4 +60,5 @@ ActiveRecord::Schema.define(version: 2021_02_28_035156) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "reviews", "users"
 end

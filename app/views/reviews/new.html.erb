@@ -5,10 +5,10 @@
 </div>
 
 <%= form_with(model: @review, local: true) do |f| %>
-  <div class="form-group row">
-    <%= f.label :shop_name, '店名', class:'shop_name' %>
-      <%= f.text_field :shop_name, class: "form-control" %> 
-  </div> 
+  <%# <div class="form-group row">
+    <%= f.label :shop_name, '店名', class:'shop_name' %> 
+      <%# <%= f.text_field :shop_name, class: "form-control" %> 
+  <%# </div>   %>
 
 
   <div id="evaluate_stars">
@@ -44,9 +44,10 @@
     <label>コロナ対策</label>
   </div>
 
-  <div class="form-group row">
+　<!--  客層の評価は必要あれば追加で実装（genre_idカラムは不要であれば削除） -->
+  <%# <div class="form-group row"> %>
     <%# <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %> 
-  </div>
+  <%# </div> %>
 
   <div class="form-group row justify-content-end">
     <div class="col-md-9">

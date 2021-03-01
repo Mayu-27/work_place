@@ -48,7 +48,7 @@
 | countermeasure     | float   | null: false |
 | client             | integer | null: false |
 | user               | references  | null: false |
-| spot               | references  | null: false |
+| spot               | references  | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user

@@ -57,3 +57,4 @@ gem 'devise'
 gem "dotenv-rails"
 gem 'geocoder'
 gem 'jquery-rails'
+gem 'pry-rails'
