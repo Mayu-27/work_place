@@ -12,7 +12,8 @@
 
 
   <div id="evaluate_stars">
-    <label>総合評価</label>
+    <%= f.label :star,'総合評価 ', class:'col-md-3 col-form-label' %>
+    <%= f.hidden_field :star, id: :evaluate_stars %>
   </div>
 
   <!-- 口コミ -->
@@ -25,24 +26,28 @@
 
 <h2>詳細評価</h2>
   <div id="detail_evaluate_stars01">
-    <label>雰囲気</label>
-    
+    <%= f.label :star,'雰囲気 ', class:'col-md-3 col-form-label' %>
+    <%= f.hidden_field :star, id: :detail_evaluate_stars01 %>
   </div>
 
   <div id="detail_evaluate_stars02">
-    <label>店内設備・清潔さ</label>
+    <%= f.label :star,'店内設備・清潔さ ', class:'col-md-3 col-form-label' %>
+    <%= f.hidden_field :star, id: :detail_evaluate_stars02 %>
   </div>
 
   <div id="detail_evaluate_stars03">
-    <label>インターネット環境</label>
+    <%= f.label :star,'インターネット環境 ', class:'col-md-3 col-form-label' %>
+    <%= f.hidden_field :star, id: :detail_evaluate_stars03 %>
   </div>
 
   <div id="detail_evaluate_stars04">
-    <label>混雑度</label>
+    <%= f.label :star,'混雑度 ', class:'col-md-3 col-form-label' %>
+    <%= f.hidden_field :star, id: :detail_evaluate_stars04 %>
   </div>
 
   <div id="detail_evaluate_stars05">
-    <label>コロナ対策</label>
+    <%= f.label :star,'コロナ対 ', class:'col-md-3 col-form-label' %>
+    <%= f.hidden_field :star, id: :detail_evaluate_stars05 %>
   </div>
 
 　<!--  客層の評価は必要あれば追加で実装（genre_idカラムは不要であれば削除） -->
@@ -62,42 +67,42 @@
     starOn: "<%= asset_path('star-on.png') %>",
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
-    scoreName: 'movie[evaluation]' //登録するモデル名とカラム名を記述
+    scoreName: 'review[overall_evaluation]' //登録するモデル名とカラム名を記述
   });
 
   $('#detail_evaluate_stars01').raty({
     starOn: "<%= asset_path('star-on.png') %>",
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
-    scoreName: 'movie[evaluation]' //登録するモデル名とカラム名を記述
+    scoreName: 'review[atmosphere]' //登録するモデル名とカラム名を記述
   });
 
   $('#detail_evaluate_stars02').raty({
     starOn: "<%= asset_path('star-on.png') %>",
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
-    scoreName: 'movie[evaluation]' //登録するモデル名とカラム名を記述
+    scoreName: 'review[facility]' //登録するモデル名とカラム名を記述
   });
 
   $('#detail_evaluate_stars03').raty({
     starOn: "<%= asset_path('star-on.png') %>",
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
-    scoreName: 'movie[evaluation]' //登録するモデル名とカラム名を記述
+    scoreName: 'review[network_stability]' //登録するモデル名とカラム名を記述
   });
 
   $('#detail_evaluate_stars04').raty({
     starOn: "<%= asset_path('star-on.png') %>",
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
-    scoreName: 'movie[evaluation]' //登録するモデル名とカラム名を記述
+    scoreName: 'review[congestion]' //登録するモデル名とカラム名を記述
   });
 
   $('#detail_evaluate_stars05').raty({
     starOn: "<%= asset_path('star-on.png') %>",
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
-    scoreName: 'movie[evaluation]' //登録するモデル名とカラム名を記述
+    scoreName: 'review[corona_countermeasure]' //登録するモデル名とカラム名を記述
   });
 </script>
 
