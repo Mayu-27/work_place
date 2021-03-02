@@ -24,23 +24,24 @@
 
 
 <h2>詳細評価</h2>
-  <div id="evaluate_stars">
+  <div id="detail_evaluate_stars01">
     <label>雰囲気</label>
+    
   </div>
 
-  <div id="evaluate_stars">
-    <label>ネット環境</label>
-  </div>
-
-  <div id="evaluate_stars">
+  <div id="detail_evaluate_stars02">
     <label>店内設備・清潔さ</label>
   </div>
 
-  <div id="evaluate_stars">
+  <div id="detail_evaluate_stars03">
+    <label>インターネット環境</label>
+  </div>
+
+  <div id="detail_evaluate_stars04">
     <label>混雑度</label>
   </div>
 
-  <div id="evaluate_stars">
+  <div id="detail_evaluate_stars05">
     <label>コロナ対策</label>
   </div>
 
@@ -63,13 +64,46 @@
     starHalf: "<%= asset_path('star-half.png') %>",
     scoreName: 'movie[evaluation]' //登録するモデル名とカラム名を記述
   });
+
+  $('#detail_evaluate_stars01').raty({
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    scoreName: 'movie[evaluation]' //登録するモデル名とカラム名を記述
+  });
+
+  $('#detail_evaluate_stars02').raty({
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    scoreName: 'movie[evaluation]' //登録するモデル名とカラム名を記述
+  });
+
+  $('#detail_evaluate_stars03').raty({
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    scoreName: 'movie[evaluation]' //登録するモデル名とカラム名を記述
+  });
+
+  $('#detail_evaluate_stars04').raty({
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    scoreName: 'movie[evaluation]' //登録するモデル名とカラム名を記述
+  });
+
+  $('#detail_evaluate_stars05').raty({
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    scoreName: 'movie[evaluation]' //登録するモデル名とカラム名を記述
+  });
 </script>
 
 
 
 <!-- /口コミ入力フォーム -->
-
-
 
 
 
