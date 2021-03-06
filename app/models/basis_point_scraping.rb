@@ -1,0 +1,3 @@
+class BasisPointScraping < ApplicationRecord
+  
+end
