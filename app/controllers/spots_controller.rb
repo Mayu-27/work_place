@@ -11,6 +11,8 @@ class SpotsController < ApplicationController
     set_accea_cafes 
   end
 
+  
+
 end
 
 

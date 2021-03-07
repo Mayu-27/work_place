@@ -171,18 +171,27 @@ function initMap(){
   <% @spots.each do |spot| %>
   (function(){
     var markerLatLng = new google.maps.LatLng({lat: <%= spot.latitude %>, lng: <%= spot.longitude %>}); 
-    var contentString = "<%= spot.shop_name %>"; 
+    // var contentString = document.createElement('div');
+    
+    var contentString = '<div id="content">'+
+          // '<h1 id="firstHeading" class="firstHeading"><%= spot.shop_name %></h1>'+
+          '<div id="bodyContent">'+
+          '<a href="/spots/<%= spot.id %>">'+
+          '<%= spot.shop_name %></a> '+
+          '</div>';
+  
     var marker = new google.maps.Marker({
       position: markerLatLng,
       map: map
       }); 
-
+ 
     var infoWindow = new google.maps.InfoWindow({ // 吹き出しの追加
       position: markerLatLng,
       content: contentString // 吹き出しに表示する内容
+      // content: `<a href='/spots/${spot.id}'>${contentString}</a>`
     });
-    marker.addListener('mouseover', function() { // マーカーをクリックしたとき
-      infoWindow.open(mapArea, marker); // mapみmakerをの吹き出しの表示します
+    marker.addListener('mouseover', function() { 
+      infoWindow.open(mapArea, marker); 
     });
   })();
   <% end %>
