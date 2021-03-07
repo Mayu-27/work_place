@@ -36,11 +36,11 @@ ActiveRecord::Schema.define(version: 2021_03_07_075312) do
 
   create_table "spots", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "shop_name", limit: 255, null: false
-    t.integer "genre_id", null: false
+    t.integer "genre_id"
     t.string "address", limit: 255, null: false
-    t.string "phone_number", limit: 255, null: false
-    t.string "opening_hours", limit: 255, null: false
-    t.string "non_business_day", limit: 255, null: false
+    t.string "phone_number", limit: 255
+    t.string "opening_hours", limit: 255
+    t.string "non_business_day", limit: 255
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", precision: 6, null: false

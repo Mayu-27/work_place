@@ -28,21 +28,15 @@ module AcceaCafeScraping
       address_list << shop_address
     end
 
-    # 2つの配列からhashを作る
     data = shop_list.zip(address_list).to_h
-
     shop_names = data.keys
-   
-
+  
     shop_names.each do |shop_name|
-      # spot = Spot.where(shop_name: shop_name).first_or_initialize
-      spot = Spot.new
+      spot = Spot.where(shop_name: shop_name).first_or_initialize
       spot.shop_name = shop_name
       spot.address = data[shop_name]
       spot.save
     end
-
-    
   end
 end
 

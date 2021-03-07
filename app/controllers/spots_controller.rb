@@ -9,8 +9,7 @@ class SpotsController < ApplicationController
 
   def new
     binding.pry
-    set_accea_cafes # ここまでは動いてる
-    # save(data)  # ここでエラー data
+    set_accea_cafes 
   end
 
 end
