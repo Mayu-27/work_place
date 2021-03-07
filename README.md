@@ -14,7 +14,7 @@
 | birth_date         | date    | null: false |
 
 ### Association
-- has_many :my_favorite_spots
+- has_many :favorites
 - has_many :reviews
 
 
@@ -33,7 +33,7 @@
 
 ### Association
 - has_many :reviews
-- has_many :my_favorite_spots
+- has_many :favorites
 
 
 ## reviews テーブル
@@ -55,7 +55,7 @@
 - belongs_to :spot
 
 
-## my_favorite_spots テーブル
+## favorites テーブル
 
 | Column             | Type       | Options     |
 | ------------------ | ---------- | ----------- |
