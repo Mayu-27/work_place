@@ -4,11 +4,10 @@ class SpotsController < ApplicationController
   include AcceaCafeScraping 
 
   def index
-    @spot = Spot.find(2)
+    @spots = Spot.all
   end
 
   def new
-    binding.pry
     set_accea_cafes 
   end
 

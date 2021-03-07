@@ -158,29 +158,34 @@
 <script>
 
 function initMap(){
-  var test = {lat: <%= @spot.latitude %>, lng: <%= @spot.longitude %>};
+  var capital = {lat: 35.68123620000001, lng:139.7671248};
   var mapArea = document.getElementById('map');
   var mapOptions = {
-    center: test,
+    center: capital,
     zoom: 16,
   };
   var map = new google.maps.Map(mapArea, mapOptions);
     
   //解説2：変数 markerOptions
-  var markerOptions = {
-    map: map,
-    position: test,
-  };
+  
+  <% @spots.each do |spot| %>
+  (function(){
+    var markerLatLng = new google.maps.LatLng({lat: <%= spot.latitude %>, lng: <%= spot.longitude %>}); 
+    var contentString = "<%= spot.shop_name %>"; 
+    var marker = new google.maps.Marker({
+      position: markerLatLng,
+      map: map
+      }); 
 
-  //解説1：マーカーを生成するMarkerクラス
-  var marker = new google.maps.Marker(markerOptions);
-
-  infoWindow = new google.maps.InfoWindow({ // 吹き出しの追加
-        content: '<div class="map"><%= @spot.shop_name %></div>' // 吹き出しに表示する内容
-  });
-    marker.addListener('click', function() { // マーカーをクリックしたとき
+    var infoWindow = new google.maps.InfoWindow({ // 吹き出しの追加
+      position: markerLatLng,
+      content: contentString // 吹き出しに表示する内容
+    });
+    marker.addListener('mouseover', function() { // マーカーをクリックしたとき
       infoWindow.open(mapArea, marker); // mapみmakerをの吹き出しの表示します
     });
+  })();
+  <% end %>
 }
 
 </script>
