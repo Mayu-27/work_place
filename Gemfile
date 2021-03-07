@@ -58,3 +58,4 @@ gem "dotenv-rails"
 gem 'geocoder'
 gem 'jquery-rails'
 gem 'pry-rails'
+gem 'selenium-webdriver'
