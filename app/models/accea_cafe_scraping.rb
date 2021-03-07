@@ -1,42 +1,52 @@
-class AcceaCafeScraping <   
 
-require 'selenium-webdriver'
+module AcceaCafeScraping 
+  require 'selenium-webdriver'
 
-driver = Selenium::WebDriver.for :chrome
-driver.navigate.to "http://cafe.accea.co.jp/#access"
+  def set_accea_cafes 
+    driver = Selenium::WebDriver.for :chrome
+    driver.navigate.to "http://cafe.accea.co.jp/#access"
 
-names = driver.find_elements(:class, 'si__shopName')
+    names = driver.find_elements(:class, 'si__shopName')
 
-shop_list = []
+    shop_list = []
 
-names.each do |name|
-  shop_list << name.text
+    names.first(3).each do |name|
+      shop_list << name.text
+    end
+
+    url = []
+    address_list = []
+
+    3.times do |n|
+      element = driver.find_element(:xpath ,"//*[@id='access']/div/div/ul/li[#{n+1}]/a").attribute('href')
+      url << element
+    end
+
+    url.each do |u|
+      driver.navigate.to u
+      shop_address = driver.find_element(:class ,"mb20").text  
+      address_list << shop_address
+    end
+
+    # 2つの配列からhashを作る
+    data = shop_list.zip(address_list).to_h
+
+    shop_names = data.keys
+   
+
+    shop_names.each do |shop_name|
+      # spot = Spot.where(shop_name: shop_name).first_or_initialize
+      spot = Spot.new
+      spot.shop_name = shop_name
+      spot.address = data[shop_name]
+      spot.save
+    end
+
+    
+  end
 end
 
-url = []
-address_list = []
-
-3.times do |n|
-  element = driver.find_element(:xpath ,"//*[@id='access']/div/div/ul/li[#{n+1}]/a").attribute('href')
-  url << element
-end
-
-url.each do |u|
-  driver.navigate.to u
-  shop_address = driver.find_element(:class ,"mb20").text  
-  address_list << shop_address
-end
 
 
-spot = Spot.new
-address_list.each do |address|
-  spot.address = address
-end
 
-shop_list.each do |shop_name|
-  spot.shop_name = shop_name
-end
 
-spot.save
-
-end

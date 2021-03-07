@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :reviews, only: [:index, :new, :create, :show]
   # resources :spots,
   resources :users, only: [:show]
+  resources :spots
 end
