@@ -11,7 +11,9 @@ class SpotsController < ApplicationController
     set_accea_cafes 
   end
 
-  
+  def show
+    @spot = Spot.find(params[:id])
+  end
 
 end
 
