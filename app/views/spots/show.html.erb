@@ -54,13 +54,14 @@
       </tbody>
     </table>
     <div class="option">
+    <%# <% if @spot.favorited_by?(current_user) %> 
       <div class="favorite-btn">
         <%# <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%> 
-        <span>お気に入り 0</span>
-      </div>
-      <div class="report-btn">
-        <%# <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%> 
-        <span>不適切な商品の通報</span>
+        <%= link_to "お気に入りから外す", spot_favorites_path(@spot), method: :delete %>
+      <%# </div> %>
+    <%# <% else %> 
+      <%= link_to "お気に入り登録", spot_favorites_path(@spot), method: :post %>
+    <%# <% end %> 
       </div>
     </div>
   </div>
@@ -93,3 +94,6 @@
 </div>
 
 <%= render "shared/footer" %>
+
+
+

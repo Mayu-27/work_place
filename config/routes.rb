@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'spots#index'
   resources :reviews, only: [:index, :new, :create, :show]
   # resources :spots,
-  resources :users, only: [:show]
-  resources :spots
+  resources :users, only: [:show] 
+  resources :spots do
+    resource :favorites, only: [:create, :destroy]
+  end
 end

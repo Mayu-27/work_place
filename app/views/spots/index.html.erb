@@ -14,7 +14,7 @@
       フリマアプリです
     </p>
     <div class='store-btn'>
-      <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
+      <%# <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %> %>
       <%#= link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
     </div>
   </div>
@@ -172,8 +172,9 @@ function initMap(){
   (function(){
     var markerLatLng = new google.maps.LatLng({lat: <%= spot.latitude %>, lng: <%= spot.longitude %>}); 
     
-    var contentString = '
-          '<div id="content">'+
+
+    var contentString = '<div id="content">'+
+          '<div id="bodyContent">'+
           '<a href="/spots/<%= spot.id %>">'+
           '<%= spot.shop_name %></a> '+
           '</div>';
@@ -199,6 +200,11 @@ function initMap(){
 <%#　Google Mapの表示 %>
 
 <%#= render "shared/footer" %>
+
+
+
+
+
 
 
 
