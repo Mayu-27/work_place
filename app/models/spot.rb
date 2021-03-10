@@ -4,7 +4,7 @@ class Spot < ApplicationRecord
   has_many :users, through: :favorites, dependent: :destroy
   
 
-  # def favorited_by?(user)
-  #   favorites.where(user_id: user).exists?
-  # end
+  def favorited_by?(user)
+    Favorite.where(user_id: user).exists?
+  end
 end

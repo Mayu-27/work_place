@@ -12,11 +12,12 @@ class FavoritesController < ApplicationController
       render :show
     end
   end
-
  
   def destroy
     @favorite = Favorite.find_by(user_id: current_user.id, spot_id: @spot.id)
-    @favorite.destroy
+    if @favorite.destroy
+      redirect_to user_path(current_user)
+    end
   end
 
   private
