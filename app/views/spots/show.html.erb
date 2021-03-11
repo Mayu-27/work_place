@@ -63,7 +63,7 @@
       <%= link_to "お気に入り登録", spot_favorites_path(@spot), method: :post %>
     <% end %> 
     <div class="comment-box">
-      <%= link_to "クチコミ投稿する", new_review_path %>
+      <%= link_to "クチコミ投稿する", new_spot_review_path(@spot) %>
     </div>
     </div>
   </div>
