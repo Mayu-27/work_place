@@ -29,5 +29,5 @@ class User < ApplicationRecord
     validates :kana_first_name
   end
   
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 end

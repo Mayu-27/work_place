@@ -9,6 +9,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @spot = Spot.find(params[:spot_id])
     @review = Review.new(review_params)
     binding.pry
     if @review.save
@@ -24,7 +25,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:overall_evaluation, :comment, :atmosphere, :network_stability, :facility, :congestion, :corona_countermeasure).merge(user_id: current_user.id)
+    params.require(:review).permit(:overall_evaluation, :comment, :atmosphere, :network_stability, :facility, :congestion, :corona_countermeasure).merge(user_id: current_user.id, spot_id: @spot.id)
   end
 
   # def move_to_index
