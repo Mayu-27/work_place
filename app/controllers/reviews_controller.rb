@@ -11,6 +11,8 @@ class ReviewsController < ApplicationController
   def create
     @spot = Spot.find(params[:spot_id])
     @review = Review.new(review_params)
+    # @post = Post.find(params[:post_id])
+    # @comment = @post.comments.new (comment_params)
     binding.pry
     if @review.save
       redirect_to root_path

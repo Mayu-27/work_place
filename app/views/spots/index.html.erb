@@ -162,7 +162,7 @@ function initMap(){
   var mapArea = document.getElementById('map');
   var mapOptions = {
     center: capital,
-    zoom: 16,
+    zoom: 14,
   };
   var map = new google.maps.Map(mapArea, mapOptions);
     
@@ -174,9 +174,8 @@ function initMap(){
     
 
     var contentString = '<div id="content">'+
-          '<div id="bodyContent">'+
-          '<a href="/spots/<%= spot.id %>">'+
-          '<%= spot.shop_name %></a> '+
+          '<div id="bodyContent">'+ 
+          '<%= link_to "#{spot.shop_name}", spot_path(spot) %>'+
           '</div>';
   
     var marker = new google.maps.Marker({
@@ -199,7 +198,7 @@ function initMap(){
 <script src="https://maps.googleapis.com/maps/api/js?key= <%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
 <%#　Google Mapの表示 %>
 
-<%#= render "shared/footer" %>
+<%= render "shared/footer" %>
 
 
 
