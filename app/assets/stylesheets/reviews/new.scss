@@ -27,3 +27,8 @@
 .evaluation input[type='radio']:checked ~ label{
   color: #ffcc00;
 }
+
+.form-control{
+  width: 80%;
+  height: 100px;
+}

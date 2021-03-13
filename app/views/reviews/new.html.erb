@@ -1,16 +1,15 @@
 
 
 <div class= "page-title">
-  <h1>レビュー投稿</h1>
+  <h1>クチコミ投稿</h1>
 </div>
 
-<%= form_with model: [@review, @spot], url: spot_reviews_path(spot_id: @spot), local: true do |f| %>
+<%= form_with model: [@review, @spot], url: spot_reviews_path(spot_id: @spot), method: :post, local: true do |f| %>
 
 
-  <%# <div class="form-group row">
-    <%= f.label :shop_name, '店名', class:'shop_name' %> 
-      <%# <%= f.text_field :shop_name, class: "form-control" %> 
-  <%# </div>   %>
+  <div class="info_form">
+    <%= "店舗名: #{@spot.shop_name}" %> 
+  </div>  
 
 
   <div id="evaluate_stars">
@@ -19,14 +18,14 @@
   </div>
 
   <!-- 口コミ -->
-  <div class="form-group row">
+  <div class="info_form">
     <div class="col-md-9"> 
-      <%= f.text_area :comment, class: "form-control", rows: "8", placeholder:'口コミ内容がなくても、タイトルと評価のみで投稿できます。まずは投稿してみましょう！投稿してから編集もできますよ！' %>
+      <%= f.text_area :comment, class: "form-control", rows: "8", placeholder:'まずは投稿してみましょう！' %>
     </div> 
   </div> 
 
 
-<h2>詳細評価</h2>
+<h2>◆詳細評価◆</h2>
   <div id="detail_evaluate_stars01">
     <%= f.label :star,'雰囲気 ', class:'col-md-3 col-form-label' %>
     <%= f.hidden_field :star, id: :detail_evaluate_stars01 %>
