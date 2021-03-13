@@ -1,5 +1,5 @@
 class SpotsController < ApplicationController
-  # ピン留めのテストように１件のみ取得
+  
 
   include AcceaCafeScraping 
 

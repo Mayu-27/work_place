@@ -4,7 +4,9 @@
   <h1>レビュー投稿</h1>
 </div>
 
-<%= form_with model: @review, url: spot_reviews_path(@review), local: true do |f| %>
+<%= form_with model: [@review, @spot], url: spot_reviews_path(spot_id: @spot), local: true do |f| %>
+
+
   <%# <div class="form-group row">
     <%= f.label :shop_name, '店名', class:'shop_name' %> 
       <%# <%= f.text_field :shop_name, class: "form-control" %> 
