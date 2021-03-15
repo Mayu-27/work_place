@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_07_110330) do
+ActiveRecord::Schema.define(version: 2021_03_15_234344) do
 
   create_table "basis_point_scrapings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 2021_03_07_110330) do
     t.float "facility", null: false
     t.float "congestion", null: false
     t.float "corona_countermeasure", null: false
-    t.integer "client_id", null: false
     t.bigint "spot_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'spots#index'
   resources :users, only: [:show] 
   resources :spots do
-    resource :favorites, only: [:create, :destroy]
     resources :reviews, only: [:index, :new, :create]
+    resource :favorites, only: [:create, :destroy]
     # post 'review' => 'reviews#create'
   end
 end
