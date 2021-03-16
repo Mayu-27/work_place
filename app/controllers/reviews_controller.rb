@@ -14,7 +14,6 @@ class ReviewsController < ApplicationController
     
     # @review = Review.new(review_params)
     
-    # @comment = @post.comments.new (comment_params)
     if @review.save
       redirect_to root_path
     else
@@ -22,11 +21,8 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # def show
 
-  # end
-
-  # .merge(user_id: current_user.id, tweet_id: params[:tweet_id])
+  
   
   private
   def review_params

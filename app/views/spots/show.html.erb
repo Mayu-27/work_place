@@ -20,13 +20,26 @@
       </span>
     </div>
 
-  
 
     <div class="item-explain-box">
       <span><%= "店舗情報" %></span>
     </div>
+    <% if @spot.reviews.present? %>
+      <div class="average-review-rating" data-score=<%= @spot.reviews.average(:overall_evaluation).round %>></div>
+    <% end %>
+    <script>
+      $('.average-review-rating').raty({
+      readOnly: true,
+      starOn: "<%= asset_path('star-on.png') %>",
+      starOff: "<%= asset_path('star-off.png') %>",
+      starHalf: "<%= asset_path('star-half.png') %>",
+      score: function() {
+      return $(this).attr('data-score')
+        } 
+      });
+    </script>
+
     <table class="detail-table">
-      <tbody>
         <tr>
           <th class="detail-item">店舗</th>
           <td class="detail-value"><%= @spot.shop_name %></td>
@@ -65,9 +78,7 @@
     </div>
   </div>
 
-<%# 平均クチコミ評価表示 %>
 
-<%# end %>
 
 <%# クチコミ一覧表示 %>
   <%# <div class="reviews-box">
