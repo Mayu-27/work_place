@@ -13,7 +13,7 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
-    @reviews = Review.all
+    @reviews = Review.all.includes(:user)
   end
 
 end

@@ -80,10 +80,22 @@
 
 
 
-<%# クチコミ一覧表示 %>
-  <%# <div class="reviews-box">
-  <span><%= "クチコミ一覧" %></span>
-<%# </div> %> 
+
+  <div class="reviews-box">
+    <h4>＜クチコミ一覧＞</h4>
+    <% @reviews.each do |review| %>
+         <p>
+          <strong><%= link_to review.user.nickname, "#" %></strong>
+          <%= review.overall_evaluation %>
+          <%= review.comment %>
+          <%= review.atmosphere %>
+          <%= review.network_stability %>
+          <%= review.facility %>
+          <%= review.congestion %>
+          <%= review.corona_countermeasure %>
+        </p>
+    <% end %>
+  </div>  
   
 </div>
 
