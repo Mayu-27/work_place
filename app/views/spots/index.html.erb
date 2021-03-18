@@ -57,35 +57,40 @@
   <div class='item-contents'>
     <h2 class='title'>おすすめコワーキングカフェ</h2>
     <ul class='item-lists'>
-
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+    <% @random.each do |r| %>
       <li class='list'>
-        <%= link_to "#" do %>
         <div class='item-img-content'>
-          <%#= image_tag "item-sample.png", class: "item-img" %>
-
-          <%# 商品が売れていればsold outを表示しましょう %>
-          <div class='sold-out'>
-            <span>TEST</span>
-          </div>
-          <%# //商品が売れていればsold outを表示しましょう %>
-
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
-            <%= "商品名" %>
+            <%= r.shop_name %>
+          </h3>
+          <h3 class='spot-review'>
+            <%= r.reviews.average(:overall_evaluation).round %>
           </h3>
           <div class='item-price'>
-            <span><%= "店舗名" %>円<br><%= "配送料負担" %></span>
+            <span><%= r.address %></span>
             <div class='star-btn'>
               <%#= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
             </div>
           </div>
         </div>
-        <% end %>
-      </li>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+        </li>
+      
+      
+     <script>
+      $('.spot-review').raty({
+        size: 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= r.reviews.average(:overall_evaluation).round %>,
+      });
+     </script> 
+     <% end %>
 
       <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
       <%# 商品がある場合は表示されないようにしましょう %>

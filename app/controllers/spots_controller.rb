@@ -5,6 +5,7 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all
+    @random = Spot.order("RAND()").limit(5)
   end
 
   def new
