@@ -24,22 +24,15 @@
     <div class="item-explain-box">
       <span><%= "店舗情報" %></span>
     </div>
-    <% if @spot.reviews.present? %>
-      <div class="average-review-rating" data-score=<%= @spot.reviews.average(:overall_evaluation).round %>></div>
-    <% end %>
-    <script>
-      $('.average-review-rating').raty({
-      readOnly: true,
-      starOn: "<%= asset_path('star-on.png') %>",
-      starOff: "<%= asset_path('star-off.png') %>",
-      starHalf: "<%= asset_path('star-half.png') %>",
-      score: function() {
-      return $(this).attr('data-score')
-        } 
-      });
-    </script>
-
+    
     <table class="detail-table">
+      <tbody>
+      <% if @spot.reviews.present? %>
+        <tr>
+          <th class="detail-item">クチコミ評価</th>
+          <td class="average-review-rating-<%= @spot.reviews.average(:overall_evaluation).round %>"></td>
+        </tr>
+      <% end %>
         <tr>
           <th class="detail-item">店舗</th>
           <td class="detail-value"><%= @spot.shop_name %></td>
@@ -76,30 +69,71 @@
       <%= link_to "口コミ投稿する", new_spot_review_path(spot_id: @spot) %>
     </div>
     </div>
-  </div>
 
-
-
-
-  <div class="reviews-box">
+    <script>
+      $('.average-review-rating-<%= @spot.reviews.average(:overall_evaluation).round %>').raty({
+        size: 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= @spot.reviews.average(:overall_evaluation).round %>,
+      });
+    </script>  
+  
+    <div class="reviews-box">
     <h4>＜クチコミ一覧＞</h4>
     <% @reviews.each do |review| %>
          <p>
           <strong><%= link_to review.user.nickname, "#" %></strong>
-          <%= review.overall_evaluation %>
-          <%= review.comment %>
-          <%= review.atmosphere %>
-          <%= review.network_stability %>
-          <%= review.facility %>
-          <%= review.congestion %>
-          <%= review.corona_countermeasure %>
+          <div class = "detail-review01"><%= review.overall_evaluation %></div>
+          <div class = "detail-review02"><%= review.comment %></div>
+          <div class = "detail-review03"><%= review.atmosphere %></div>
+          <div class = "detail-review04"><%= review.network_stability %></div>
+          <div class = "detail-review05"><%= review.facility %></div>
+          <div class = "detail-review06"><%= review.congestion %></div>
+          <div class = "detail-review07"><%= review.corona_countermeasure %></div>
         </p>
+    
+
+  <script>
+      $('.detail-review01').raty({
+        size: 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= review.overall_evaluation %>,
+      });
+    </script> 
+    <script>
+      $('.detail-review02).raty({
+        size: 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= review.atmosphere %>,
+      });
+    </script> 
+    <script>
+      $('detail-review03').raty({
+        size: 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= review.network_stability %>,
+      });
+    </script> 
     <% end %>
-  </div>  
-  
+  </div> 
+
+  </div>
 </div>
 
 <%= render "shared/footer" %>
-
-
-
