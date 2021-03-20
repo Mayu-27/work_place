@@ -68,6 +68,10 @@
     </div>
 
     <script>
+    window.onpageshow = function(){
+      if (event.persisted) {
+		    window.location.reload();
+      }
       $('.average-review-rating-<%= @spot.reviews.average(:overall_evaluation).round %>').raty({
         size: 36,
         starOff:  '<%= asset_path('star-off.png') %>',
@@ -76,7 +80,8 @@
         half: true,
         readOnly: true,
         score: <%= @spot.reviews.average(:overall_evaluation).round %>,
-      });
+      })
+    };
     </script>  
   
     <div class="reviews-box">
@@ -107,17 +112,21 @@
         <% end %>
 
   <script>
-      $('.overall-evaliation-<%= index %>').raty({
-        size: 36,
-        starOff:  '<%= asset_path('star-off.png') %>',
-        starOn : '<%= asset_path('star-on.png') %>',
-        starHalf: '<%= asset_path('star-half.png') %>',
-        half: true,
-        readOnly: true,
-        score: <%= review.overall_evaluation %>,
-      });
+    // window.onpageshow = function(){
+        $('.overall-evaliation-<%= index %>').raty({
+          size: 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          half: true,
+          readOnly: true,
+          score: <%= review.overall_evaluation %>,
+        })
+    // };
+    
     </script> 
     <script>
+    // window.onpageshow = function(){
       $('.atmosphere-<%= index %>').raty({
         size: 36,
         starOff:  '<%= asset_path('star-off.png') %>',
@@ -126,9 +135,11 @@
         half: true,
         readOnly: true,
         score: <%= review.atmosphere %>,
-      });
+      })
+    // };
     </script> 
     <script>
+    // window.onpageshow = function(){
       $('.network_stability-<%= index %>').raty({
         size: 36,
         starOff:  '<%= asset_path('star-off.png') %>',
@@ -137,9 +148,11 @@
         half: true,
         readOnly: true,
         score: <%= review.network_stability %>,
-      });
+      })
+    // };
     </script> 
     <script>
+    // window.onpageshow = function(){
       $('.facility-<%= index %>').raty({
         size: 36,
         starOff:  '<%= asset_path('star-off.png') %>',
@@ -148,9 +161,11 @@
         half: true,
         readOnly: true,
         score: <%= review.facility %>,
-      });
+      })
+    // };
     </script> 
     <script>
+    // window.onpageshow = function(){
       $('.congestion-<%= index %>').raty({
         size: 36,
         starOff:  '<%= asset_path('star-off.png') %>',
@@ -159,9 +174,11 @@
         half: true,
         readOnly: true,
         score: <%= review.congestion %>,
-      });
+      })
+    // };
     </script> 
     <script>
+    // window.onpageshow = function(){
       $('.corona_countermeasure-<%= index %>').raty({
         size: 36,
         starOff:  '<%= asset_path('star-off.png') %>',
@@ -170,7 +187,8 @@
         half: true,
         readOnly: true,
         score: <%= review.corona_countermeasure %>,
-      });
+      })
+    // };
     </script> 
 
     <% end %>
