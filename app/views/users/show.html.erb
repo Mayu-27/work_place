@@ -7,4 +7,28 @@
       <%# </div>  %>
     <% end  %>
   <% end %>
+
+  <h1><%= @user.nickname %>さんクチコミ一覧</h1>
+  <% if @reviews.present?%>
+    <% @reviews.each_with_index do |review, index| %>
+      <%# <div class="content_post" style="background-image: url(<%= tweet.image %> 
+        <p><%= review.spot.shop_name %></p>
+        <p class = "user-detail-overall_evaluation-<%= index %>"><%= review.overall_evaluation %></p>
+        <p><%= review.comment %></p>
+      <%# </div>  %>
+   
+  <script>
+      $('.user-detail-overall_evaluation-<%= index %>').raty({
+        size: 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= review.overall_evaluation %>,
+      });
+  </script> 
+
+  <% end  %>
+  <% end %>
 </div>
