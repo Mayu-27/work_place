@@ -85,6 +85,12 @@
     　　　<% if @spot.id == review.spot_id %>
          <p>
           <strong><%= link_to review.user.nickname, "#" %></strong>
+          <% if review.user.avatar.attached? %>
+            <%= image_tag review.user.avatar, alt: 'ユーザー画像', class: 'user-avatar' %>
+          <% else %>
+            <%= image_tag 'user-avatar.png', alt: 'ユーザー画像', class: 'user-avatar' %>
+          <% end %>
+
           <div class = "overall-evaliation-<%= index %>"><%= review.overall_evaluation %></div>
           <div class = "comment-<%= index %>"><%= review.comment %></div>
           <div class = "atmosphere-<%= index %>"><%= review.atmosphere %></div>

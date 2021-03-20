@@ -89,6 +89,11 @@
                     date_separator: '%s'),
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
     </div>
+    <div class='form-text-wrap'>
+      <label class="form-text">プロフィール写真</label>
+    </div>
+    <%= f.file_field :avatar, class:"user-avatar" %>
+    
     <p class='info-text'>※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。</p>
   </div>
   <div class="form-group">

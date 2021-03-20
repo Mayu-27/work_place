@@ -3,7 +3,7 @@
 .item-show {
   background-color: #f8f8f8;
   width: 100vw;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   padding: 5vh 0;
@@ -14,7 +14,7 @@
   width: 70vw;
   min-width: 1200px;
   padding: 10vh 15vw;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
 }
@@ -209,4 +209,14 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 23px;
+}
+
+
+.user-avatar{
+  width: 80px;
+  height: 80px;
+}
+
+.reviews-box{
+  justify-content: flex-start;
 }

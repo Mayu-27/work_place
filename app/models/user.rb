@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :spots, through: :favorites, dependent: :destroy
-  has_one_attached :image
+  has_one_attached :avatar
     
   with_options presence: true do
     validates :nickname
