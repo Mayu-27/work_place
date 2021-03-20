@@ -21,6 +21,15 @@ class ReviewsController < ApplicationController
     end
   end
 
+  # def edit
+  #   @review = Review.find(params[:id])
+  # end
+
+  # def update
+  #   @review = Review.find(params[:id])
+  #   review.update(review_params)
+  # end
+
 
   
   
@@ -29,7 +38,7 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:overall_evaluation, :comment, :atmosphere, :network_stability, :facility, :congestion, :corona_countermeasure).merge(user_id: current_user.id, spot_id: params[:spot_id])
   end
 
-  # def move_to_index
+  # def move_to_index 
   #   unless user_signed_in?
   #     redirect_to action: :index
   #   end

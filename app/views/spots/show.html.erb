@@ -82,6 +82,7 @@
     <div class="reviews-box">
     <h4>＜クチコミ一覧＞</h4>
     <% @reviews.each_with_index do |review, index| %>
+    　　　<% if @spot.id == review.spot_id %>
          <p>
           <strong><%= link_to review.user.nickname, "#" %></strong>
           <div class = "overall-evaliation-<%= index %>"><%= review.overall_evaluation %></div>
@@ -93,7 +94,11 @@
           <div class = "corona_countermeasure-<%= index %>"><%= review.corona_countermeasure %></div>
           <%= "----------------" %>
         </p>
-   
+          <% if review.user_id == current_user.id %>
+            <%= link_to "編集", edit_spot_review_path(@spot) %>
+            <%#= link_to "削除",  %>
+          <% end %> 
+        <% end %>
 
   <script>
       $('.overall-evaliation-<%= index %>').raty({
@@ -114,7 +119,7 @@
         starHalf: '<%= asset_path('star-half.png') %>',
         half: true,
         readOnly: true,
-        score: <%= review.network_stability %>,
+        score: <%= review.atmosphere %>,
       });
     </script> 
     <script>
@@ -136,7 +141,7 @@
         starHalf: '<%= asset_path('star-half.png') %>',
         half: true,
         readOnly: true,
-        score: <%= review.network_stability %>,
+        score: <%= review.facility %>,
       });
     </script> 
     <script>
@@ -147,7 +152,7 @@
         starHalf: '<%= asset_path('star-half.png') %>',
         half: true,
         readOnly: true,
-        score: <%= review.network_stability %>,
+        score: <%= review.congestion %>,
       });
     </script> 
     <script>
@@ -158,10 +163,13 @@
         starHalf: '<%= asset_path('star-half.png') %>',
         half: true,
         readOnly: true,
-        score: <%= review.network_stability %>,
+        score: <%= review.corona_countermeasure %>,
       });
     </script> 
+
     <% end %>
+    
+    
   </div> 
 
   </div>
