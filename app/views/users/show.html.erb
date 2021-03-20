@@ -1,5 +1,5 @@
 <div class="contents row">
-  <h1><%= @nickname %>さんのお気に入り一覧</h1>
+  <h1><%= @user.nickname %>さんのお気に入り一覧</h1>
   <% if @favorites.present?%>
     <% @favorites.each do |favorite| %>
       <%# <div class="content_post" style="background-image: url(<%= tweet.image %> 
