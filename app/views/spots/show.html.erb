@@ -84,7 +84,7 @@
     <% @reviews.each_with_index do |review, index| %>
     　　　<% if @spot.id == review.spot_id %>
          <p>
-          <strong><%= link_to review.user.nickname, user_path(review.user) %></strong>
+          <strong><%= link_to review.user.nickname, "#" %></strong>
           <% if review.user.avatar.attached? %>
             <%= image_tag review.user.avatar, alt: 'ユーザー画像', class: 'user-avatar' %>
           <% else %>

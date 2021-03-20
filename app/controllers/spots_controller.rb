@@ -19,6 +19,7 @@ class SpotsController < ApplicationController
     @reviews = Review.all.includes(:user)
   end
 
+  
 
 end
 
