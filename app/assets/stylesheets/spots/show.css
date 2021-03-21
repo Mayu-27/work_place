@@ -1,9 +1,8 @@
 /* 商品の概要 */
-
 .item-show {
   background-color: #f8f8f8;
   width: 100vw;
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5vh 0;
@@ -14,7 +13,7 @@
   width: 70vw;
   min-width: 1200px;
   padding: 10vh 15vw;
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -76,6 +75,7 @@
 .item-explain-box {
   font-size: 18px;
   margin: 40px 0px;
+  overflow-wrap: anywhere;
 }
 
 .detail-table {
@@ -89,6 +89,13 @@
   border: 1px solid #dedede;
   font-size: 14px;
   text-align: center;
+}
+
+#average-review{
+  width: 80%;
+  padding: 20px;
+  border: 1px solid #dedede;
+  font-size: 14px;
 }
 
 .detail-value {
@@ -120,25 +127,12 @@
   margin-right: 5px;
 }
 
-.report-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
 
-  padding: 1vh 0;
-  color: black;
-  border: 2px solid #2d2d2d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .report-flag-icon {
   margin-right: 5px;
 }
 
-
-/* /商品の概要 */
 
 .comment-box {
   border-radius: 40px;
@@ -150,7 +144,6 @@
   justify-content: center;
   align-items: center;
   margin-right: 20px;
-  text-align: center;
 }
 
 .comment-text {
@@ -210,7 +203,6 @@
   font-weight: bold;
   font-size: 23px;
 }
-
 
 .user-avatar{
   width: 80px;

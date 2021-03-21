@@ -1,23 +1,6 @@
-
+<%= render "shared/header" %>
 
 <div class="item-show">
-  <div class="item-box">
-    <h2 class="name">
-      <%# <%= @hoge %> 
-    </h2>
-    <div class='item-img-content'>  
-      
-    </div>
-    <div class="item-price-box">
-      <span class="item-price">
-        <%# ¥ <%= @hoge %>
-      </span>
-      <span class="item-postage">
-        <%# <%= @hoge %> 
-      </span>
-    </div>
-
-
     <div class="item-explain-box">
       <span><%= "店舗情報" %></span>
     </div>
@@ -27,7 +10,7 @@
       <% if @spot.reviews.present? %>
         <tr>
           <th class="detail-item">クチコミ評価</th>
-          <td class="average-review-rating-<%= @spot.reviews.average(:overall_evaluation).round %>"></td>
+          <td id = "average-review", class="average-review-rating-<%= @spot.reviews.average(:overall_evaluation).round %>"></td>
         </tr>
       <% end %>
         <tr>
@@ -52,6 +35,7 @@
         </tr>
       </tbody>
     </table>
+
     <div class="option">
     <% if @spot.favorited_by?(current_user, @spot) %>
       <div class="favorite-btn"> 
@@ -59,12 +43,12 @@
       </div>
     <% else %> 
       <div class="favorite-btn">
-      <%= link_to "お気に入り登録", spot_favorites_path(@spot), method: :post %>
+        <%= link_to "お気に入り登録", spot_favorites_path(@spot), method: :post %>
       </div>
     <% end %> 
-    <div class="comment-box">
-      <%= link_to "口コミ投稿する", new_spot_review_path(spot_id: @spot) %>
-    </div>
+      <div class="comment-box">
+        <%= link_to "口コミ投稿する", new_spot_review_path(spot_id: @spot) %>
+      </div>
     </div>
 
     <script>
@@ -85,17 +69,17 @@
     </script>  
   
     <div class="reviews-box">
-    <h4>＜クチコミ一覧＞</h4>
     <% @reviews.each_with_index do |review, index| %>
-    　　　<% if @spot.id == review.spot_id %>
-         <p>
-          <strong><%= link_to review.user.nickname, user_path(review.user) %></strong>
+    　<% if @spot.id == review.spot_id %>
+        <div class = "review-box-left">
           <% if review.user.avatar.attached? %>
             <%= image_tag review.user.avatar, alt: 'ユーザー画像', class: 'user-avatar' %>
           <% else %>
             <%= image_tag 'user-avatar.png', alt: 'ユーザー画像', class: 'user-avatar' %>
           <% end %>
-
+          <div class = "nicname"><%= link_to review.user.nickname, user_path(review.user) %></div>
+        </div>
+        <div class = "review-box-right">
           <div class = "overall-evaliation-<%= index %>"><%= review.overall_evaluation %></div>
           <div class = "comment-<%= index %>"><%= review.comment %></div>
           <div class = "atmosphere-<%= index %>"><%= review.atmosphere %></div>
@@ -103,13 +87,17 @@
           <div class = "facility-<%= index %>"><%= review.facility %></div>
           <div class = "congestion-<%= index %>"><%= review.congestion %></div>
           <div class = "corona_countermeasure-<%= index %>"><%= review.corona_countermeasure %></div>
-          <%= "----------------" %>
-        </p>
-          <% if review.user_id == current_user.id %>
-            <%= link_to "編集", edit_spot_review_path(@spot) %>
-            <%#= link_to "削除",  %>
-          <% end %> 
-        <% end %>
+            <% if review.user_id == current_user.id %>
+              <%= link_to "編集", edit_spot_review_path(@spot) %>
+              <%= link_to "削除", "#" %>
+            <% end %> 
+        </div>
+      <% end %> 
+</div>   
+
+    
+    
+    
 
   <script>
     // window.onpageshow = function(){
@@ -191,12 +179,8 @@
     // };
     </script> 
 
-    <% end %>
-    
-    
-  </div> 
+  <% end %>
+    </div> 
 
-  </div>
-</div>
 
 <%= render "shared/footer" %>
