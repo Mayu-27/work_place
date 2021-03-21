@@ -43,11 +43,11 @@
       </div>
     <% else %> 
       <div class="favorite-btn">
-        <%= link_to "お気に入り登録", spot_favorites_path(@spot), method: :post %>
+        <%= link_to "♡お気に入り登録", spot_favorites_path(@spot), method: :post %>
       </div>
     <% end %> 
       <div class="comment-box">
-        <%= link_to "口コミ投稿する", new_spot_review_path(spot_id: @spot) %>
+        <%= link_to "✏︎クチコミ投稿する", new_spot_review_path(spot_id: @spot) %>
       </div>
     </div>
 
@@ -77,23 +77,24 @@
           <% else %>
             <%= image_tag 'user-avatar.png', alt: 'ユーザー画像', class: 'user-avatar' %>
           <% end %>
-          <div class = "nicname"><%= link_to review.user.nickname, user_path(review.user) %></div>
+          <div class = "nickname"><%= link_to review.user.nickname, user_path(review.user) %></div>
         </div>
+        
         <div class = "review-box-right">
-          <div class = "overall-evaliation-<%= index %>"><%= review.overall_evaluation %></div>
-          <div class = "comment-<%= index %>"><%= review.comment %></div>
-          <div class = "atmosphere-<%= index %>"><%= review.atmosphere %></div>
-          <div class = "network_stability-<%= index %>"><%= review.network_stability %></div>
-          <div class = "facility-<%= index %>"><%= review.facility %></div>
-          <div class = "congestion-<%= index %>"><%= review.congestion %></div>
-          <div class = "corona_countermeasure-<%= index %>"><%= review.corona_countermeasure %></div>
+          <div id = "overall_evaluation", class = "overall-evaliation-<%= index %>">総合評価　　<% review.overall_evaluation %></div>
+          <div id = "comment", class = "comment-<%= index %>"><%= review.comment %></div>
+          <div class = "atmosphere-<%= index %>">雰囲気　　　<% review.atmosphere %></div>
+          <div class = "network_stability-<%= index %>">ネット環境　<% review.network_stability %></div>
+          <div class = "facility-<%= index %>">店内設備　　<% review.facility %></div>
+          <div class = "congestion-<%= index %>">混雑度　　　<% review.congestion %></div>
+          <div class = "corona_countermeasure-<%= index %>">コロナ対策　<% review.corona_countermeasure %></div>
             <% if review.user_id == current_user.id %>
               <%= link_to "編集", edit_spot_review_path(@spot) %>
               <%= link_to "削除", "#" %>
             <% end %> 
         </div>
       <% end %> 
-</div>   
+ 
 
     
     
@@ -180,7 +181,7 @@
     </script> 
 
   <% end %>
-    </div> 
-
+</div> 
+ 
 
 <%= render "shared/footer" %>

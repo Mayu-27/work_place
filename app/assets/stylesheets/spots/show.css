@@ -5,7 +5,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vh 0;
+  padding: 5vh 10vw;
+  justify-content: center;
+  margin: 10px auto;
 }
 
 .item-box {
@@ -116,7 +118,7 @@
   width: 15vw;
   min-width: 200px;
   color: rgb(249, 75, 0);
-  border: 2px solid #ffb340;
+  border: 2px solid lightblue;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -139,7 +141,7 @@
   width: 15vw;
   min-width: 200px;
   color: rgb(249, 75, 0);
-  border: 2px solid #ffb340;
+  border: 2px solid lightblue;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -209,6 +211,23 @@
   height: 80px;
 }
 
-.reviews-box{
+
+.review-box-left{
   justify-content: flex-start;
+}
+
+.review-box-right{
+
+}
+
+.reviews-box{
+  width: 70vw;
+  text-align: left;
+}
+
+#overall_evaluation{
+
+}
+
+#comment{
 }
