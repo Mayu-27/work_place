@@ -1,16 +1,18 @@
 <%= render "shared/header" %>
 
-<div class="contents row">
-  <h1><%= @user.nickname %>さんのお気に入り一覧</h1>
-  <% if @favorites.present?%>
-    <% @favorites.each do |favorite| %>
-      <%# <div class="content_post" style="background-image: url(<%= tweet.image %> 
-        <p><%= favorite.spot.shop_name %></p>
-      <%# </div>  %>
-    <% end  %>
-  <% end %>
+<div class = "user-info-box">
+  <div class="favorite-lists">
+    <div class = "box-title"><%= @user.nickname %>さんのお気に入り一覧</div>
+    <% if @favorites.present?%>
+      <% @favorites.each do |favorite| %>
+        <%# <div class="content_post" style="background-image: url(<%= tweet.image %> 
+          <p><%= favorite.spot.shop_name %></p>
+        <%# </div>  %>
+      <% end  %>
+    <% end %>
+  </div>
 
-  <h1><%= @user.nickname %>さんクチコミ一覧</h1>
+  <div class = "review-lists"><%= @user.nickname %>さんクチコミ一覧</div>
   <% if @reviews.present?%>
     <% @reviews.each_with_index do |review, index| %>
       <%# <div class="content_post" style="background-image: url(<%= tweet.image %> 
@@ -19,18 +21,21 @@
         <p><%= review.comment %></p>
       <%# </div>  %>
    
-  <script>
-      $('.user-detail-overall_evaluation-<%= index %>').raty({
-        size: 36,
-        starOff:  '<%= asset_path('star-off.png') %>',
-        starOn : '<%= asset_path('star-on.png') %>',
-        starHalf: '<%= asset_path('star-half.png') %>',
-        half: true,
-        readOnly: true,
-        score: <%= review.overall_evaluation %>,
-      });
-  </script> 
-
-  <% end  %>
+      <script>
+        $('.user-detail-overall_evaluation-<%= index %>').raty({
+          size: 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          half: true,
+          readOnly: true,
+          score: <%= review.overall_evaluation %>,
+        });
+      </script> 
+    <% end  %>
   <% end %>
+  </div>
 </div>
+
+
+<%= render "shared/footer" %>
