@@ -2,7 +2,9 @@
 <header class='top-page-header'>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= image_tag 'logo.png', class: "logo-image" %></li>
+      <%= link_to root_path do %>
+        <%= image_tag 'logo.png', class: "logo-image" %>
+      <% end %>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>
