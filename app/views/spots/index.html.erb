@@ -21,13 +21,13 @@
 
   <div class='feature-contents'>
     <h2 class='title'>
-      FURIMAの特徴
+      About CoworkingSpot
     </h2>
     <ul class='feature-lists'>
       <li class='list'>
         <%#= image_tag "furima-intro04.png", class:"list-pict" %>
         <h3 class='feature-list-text'>
-          簡単に売り買いできる
+          リモートワークに最適な場所を見つけよう
         </h3>
         <p class='feature-list-description'>
           スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
@@ -64,7 +64,7 @@
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
-            <%= r.shop_name %>
+            <%= link_to r.shop_name, spot_path(r)  %>
           </h3>
           <h3 class='spot-review-<%= i %>'>
             <%= r.reviews.average(:overall_evaluation).round %>

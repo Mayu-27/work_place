@@ -12,11 +12,37 @@
 .favorite-lists{
   margin-top: 25px;
   font-weight: bold;
-
+  float: left;
+  display: flex;
+  
 }
 
 .review-lists{
   margin-top: 25px;
   font-weight: bold;
   float: left;
+  display: flex;
+}
+
+.review-detail{
+  width: 40%;
+  height: 200px;
+  margin: 15px 20px;
+  flex-wrap: wrap;
+}
+
+.favorite-detail{
+  width: 40%;
+  height: 200px;
+  margin: 15px 20px;
+  flex-wrap: wrap;
+}
+
+.favorite-lists-title{
+  font-weight: bold;
+  /* font-size: 30px; */
+}
+
+.review-lists-title{
+  font-weight: bold;
 }

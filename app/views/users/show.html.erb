@@ -1,40 +1,47 @@
 <%= render "shared/header" %>
 
 <div class = "user-info-box">
+  <div class = "favorite-lists"><%= @user.nickname %>さんのお気に入り一覧</div>
   <div class="favorite-lists">
-    <div class = "box-title"><%= @user.nickname %>さんのお気に入り一覧</div>
+  <div class = "favorite-lists-content"></div>
     <% if @favorites.present?%>
       <% @favorites.each do |favorite| %>
+        <div class = "favorite-detail">
         <%# <div class="content_post" style="background-image: url(<%= tweet.image %> 
-          <p><%= favorite.spot.shop_name %></p>
+          <p><%= link_to favorite.spot.shop_name, spot_path(favorite.spot) %></p>
         <%# </div>  %>
+        </div>
       <% end  %>
     <% end %>
   </div>
 
-  <div class = "review-lists"><%= @user.nickname %>さんクチコミ一覧</div>
-  <% if @reviews.present?%>
-    <% @reviews.each_with_index do |review, index| %>
-      <%# <div class="content_post" style="background-image: url(<%= tweet.image %> 
-        <p><%= review.spot.shop_name %></p>
-        <p class = "user-detail-overall_evaluation-<%= index %>"><%= review.overall_evaluation %></p>
-        <p><%= review.comment %></p>
-      <%# </div>  %>
+  <div class = "review-lists-title"><%= @user.nickname %>さんのクチコミ一覧</div>
+　<div class = "review-lists">
+    <div class = "review-lists-content"></div>
+    <% if @reviews.present?%>
+      <% @reviews.each_with_index do |review, index| %>
+        <div class = "review-detail">
+          <p><%= link_to review.spot.shop_name, spot_path(review.spot) %></p>
+          <p class = "user-detail-overall_evaluation-<%= index %>"><%= review.overall_evaluation %></p>
+          <p><%= review.comment %></p>
    
-      <script>
-        $('.user-detail-overall_evaluation-<%= index %>').raty({
-          size: 36,
-          starOff:  '<%= asset_path('star-off.png') %>',
-          starOn : '<%= asset_path('star-on.png') %>',
-          starHalf: '<%= asset_path('star-half.png') %>',
-          half: true,
-          readOnly: true,
-          score: <%= review.overall_evaluation %>,
-        });
-      </script> 
-    <% end  %>
-  <% end %>
+        <script>
+          $('.user-detail-overall_evaluation-<%= index %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            readOnly: true,
+            score: <%= review.overall_evaluation %>,
+          });
+        </script> 
+        </div>
+      <% end  %>
+    <% end %>
+    </div>
   </div>
+  
 </div>
 
 
