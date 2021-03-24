@@ -21,14 +21,14 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # def edit
-  #   @review = Review.find(params[:id])
-  # end
+  def edit
+    @review = Review.find(id: params[:id])
+  end
 
-  # def update
-  #   @review = Review.find(params[:id])
-  #   review.update(review_params)
-  # end
+  def update
+    @review = Review.find(params[:id])
+    review.update(review_params)
+  end
 
 
   

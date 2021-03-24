@@ -2,7 +2,7 @@ div class= "page-title">
   <h1>クチコミ編集</h1>
 </div>
 
-<%= form_with model: @review, url: spot_review_path(@spot), method: :post, local: true do |f| %>
+<%= form_with model: @review, url: review_path(@spot), method: :post, local: true do |f| %>
 
 
   <div class="info_form">

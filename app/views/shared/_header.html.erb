@@ -9,9 +9,14 @@
     <ul class='lists-right'>
       <% if user_signed_in? %>
         <div class="user_nav grid-6">
-          <li><%= link_to current_user.nickname, user_path(current_user), class: "user-nickname" %></li> 
-          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-          <li><%= link_to 'マイページ', user_path(current_user), class: "mypage" %></li>
+          <span><%= current_user.nickname %>
+          <ul class = "user_info">
+            <li>
+              <%= link_to 'マイページ', user_path(current_user), class: "mypage" %>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+            </li>
+          </ul>
+          </span> 
         </div>
       <% else %>
         <div class="grid-6">
