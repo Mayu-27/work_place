@@ -27,7 +27,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  padding: 1vh 0;
+  padding: 0 0 1vh 0;
   height: 90px;
 }
 
@@ -100,7 +100,7 @@
 
 
 .user_nav span {
-  top: 5px;
+  top: 38px;
   display: block;
   float: left;
   margin-left: 30px;
@@ -125,11 +125,12 @@
 .user_nav ul {
   display: none;
   position: absolute;
-  top: 46px;
-  right: 0;
+  top: 10;
+  right: auto;
   border-left: 1px solid #d8d8d8;
   border-right: 1px solid #d8d8d8;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 3px;
 }
 
 .user_nav ul li {
@@ -141,6 +142,10 @@
   padding: 10px 20px;
   text-align: left;
   border-bottom: 1px solid #d8d8d8;
+}
+
+.user_nav ul li:visited{
+  color: black;
 }
 
 .user_nav ul li:hover{
