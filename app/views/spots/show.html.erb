@@ -43,11 +43,17 @@
       </div>
     <% else %> 
       <div class="favorite-btn">
-        <%= link_to "♡お気に入り登録", spot_favorites_path(@spot), method: :post %>
+        <%= link_to spot_favorites_path(@spot), method: :post do %>
+          <%= image_tag "heart.png", class: "btn-img" %>
+          お気に入り登録
+         <% end %>
       </div>
     <% end %> 
       <div class="comment-box">
-        <%= link_to "✏︎クチコミ投稿する", new_spot_review_path(spot_id: @spot) %>
+        <%= link_to new_spot_review_path(spot_id: @spot) do %>
+          <%= image_tag "pencil.png", class: "btn-img" %>
+          クチコミ投稿する
+        <% end %>
       </div>
     </div>
 
