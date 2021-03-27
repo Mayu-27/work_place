@@ -83,7 +83,7 @@
           <% else %>
             <%= image_tag 'user-avatar.png', alt: 'ユーザー画像', class: 'user-avatar' %>
           <% end %>
-          <div class = "nickname"><%= link_to review.user.nickname, user_path(review.user) %></div>
+          <span class = "nickname"><%= link_to review.user.nickname, user_path(review.user) %></span>
         </div>
         
         <div class = "review-box-right">

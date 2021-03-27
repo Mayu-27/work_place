@@ -214,6 +214,7 @@
 
 .review-box-left{
   justify-content: flex-start;
+  margin: 15px 0px;
 }
 
 .review-box-right{
@@ -231,10 +232,35 @@
 }
 
 #comment{
+  position: relative;
+  display: inline-block;
+  margin: 20px 5px 15px 5px;
+  padding: 5px 15px;
+  width: 45vw;
+  min-height: 20vh;
+  color: #555;
+  font-size: 16px;
+  background: #EEEEEE;
+  border-radius: 10px;
+  }
+#comment::before { /* 三角の部分 */
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 5%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-bottom: 15px solid #EEEEEE;
 }
 
 .btn-img{
   width: 18px;
   height: 18px;
   margin-top: 5px;
+}
+
+.nickname{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0px 0px 10px 15px;
 }
