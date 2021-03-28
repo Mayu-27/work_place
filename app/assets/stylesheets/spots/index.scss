@@ -253,8 +253,8 @@ a {
 
 .item-lists>.list {
   padding: 10px;
-  
-  // background-color: #FFF;
+  height: 200px;
+  background-color: #FFF;
 }
 
 
@@ -284,12 +284,14 @@ a {
 
 .spot-name {
   font-size: 17px;
+  padding: 5px;
 }
 
 .spot-address {
   font-size: 13px;
   display: flex;
   justify-content: space-between;
+  padding: 5px;
 }
 
 
@@ -333,3 +335,4 @@ a {
   height: 200px;
   object-fit: cover; 
 }
+
