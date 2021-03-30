@@ -145,7 +145,7 @@ function initMap(){
 
     var contentString = '<div id="content">'+
           '<div id="bodyContent">'+ 
-          '<%= link_to "#{spot.shop_name}", spot_path(spot) %>'+
+          '<%= link_to "#{spot.shop_name}", spot_path(spot), data: {"turbolinks" => false} %>'+
           '</div>';
   
     var marker = new google.maps.Marker({
