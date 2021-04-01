@@ -46,3 +46,17 @@
 .review-lists-title{
   font-weight: bold;
 }
+
+.no-review-message {
+  color: gray;
+  margin: 0px 5px 30px 5px;
+}
+
+.no-favorite-message {
+  color: gray;
+  margin: 0px 5px 30px 5px;
+}
+
+.favorite-detail{
+  width: 220px;
+}

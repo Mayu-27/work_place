@@ -13,6 +13,10 @@
         <%# </div>  %>
         </div>
       <% end  %>
+    <% else %>
+      <div class ="no-favorite-message">
+        <%= "お気に入りはまだありません。" %>
+      </div>
     <% end %>
   </div>
 
@@ -38,6 +42,10 @@
         </script> 
         </div>
       <% end  %>
+    <% else %>
+    　<div class ="no-review-message">
+        <%= "クチコミはまだありません。" %>
+      </div>
     <% end %>
     </div>
   </div>
