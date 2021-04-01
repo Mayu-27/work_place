@@ -75,6 +75,7 @@
         </li>
       
     <script>
+    $(document).on("turbolinks:load", function() {
       $('.spot-review-<%= i %>').raty({
         size: 36,
         starOff:  '<%= asset_path('star-off.png') %>',
@@ -83,7 +84,8 @@
         half: true,
         readOnly: true,
         score: <%= r.reviews.average(:overall_evaluation).round %>,
-      });
+      })
+    })
      </script> 
      
      <% end %>

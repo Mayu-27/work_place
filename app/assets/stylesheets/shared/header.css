@@ -144,12 +144,10 @@
   border-bottom: 1px solid #d8d8d8;
 }
 
-.user_nav ul li:visited{
-  color: black;
-}
 
-.user_nav ul li:hover{
-  color: #57C3E9;
+
+.user_nav ul li a:hover{
+  opacity: 0.5;
 }
 
 
