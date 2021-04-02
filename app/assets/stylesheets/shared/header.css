@@ -144,12 +144,22 @@
   border-bottom: 1px solid #d8d8d8;
 }
 
-
-
 .user_nav ul li a:hover{
   opacity: 0.5;
 }
 
+.post{
+  align-items:center;
+  margin: 5px;
+}
+
+.grid-6{
+  margin-bottom: 35px;
+}
+
+.post:hover{
+  opacity: 0.5;
+}
 
 
 
