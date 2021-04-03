@@ -1,6 +1,11 @@
+<%= render "shared/header" %>
+
 <div class="contents row">
   <div class="success">
     <h3>削除が完了しました。</h3>
-    <%= link_to "レビュー一覧へ戻る", spot_path(@spot) %>
+    <%= link_to "クチコミ一覧へ戻る", spot_path(@spot), class: "click-btn" %>
   </div>
 </div>
+
+
+<%= render "shared/footer" %>

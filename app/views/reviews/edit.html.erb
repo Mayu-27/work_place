@@ -1,13 +1,17 @@
+<%= render "shared/header" %>
 
-<h1>クチコミ編集</h1>
-</div>
-<%# <%= form_with model: @review, local: true do |f| %>  
+<div class = "review-submit-box">
+  <div class= "page-title">
+    クチコミ編集
+  </div>
+
 <%= form_with model: @review, url: spot_review_path(@spot.id), method: :patch, local: true do |f| %> 
-<%# <%= form_with model: @review, url: spot_review_path(spot_id: @spot), method: :post, local: true do |f| %> 
 
   <div class="info_form">
-    <%= "店舗名: #{@spot.shop_name}" %> 
-  </div>  
+  <div class = "main-form">
+    <div class = "shop_info">
+      <%= "店舗名: #{@spot.shop_name}" %> 
+    </div>  
 
   <div id="evaluate_stars">
     <%= f.label :overall_evaluation,'総合評価 ', class:'col-md-3 col-form-label' %>
@@ -53,6 +57,9 @@
     </div>  
   </div> 
 <% end %>
+
+</div>
+</div>
 
 <script>
   $('#evaluate_stars').raty({
@@ -102,6 +109,7 @@
 
 <!-- /口コミ入力フォーム -->
 
+<%= render "shared/footer" %>
 
 
 
