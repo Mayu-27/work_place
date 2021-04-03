@@ -25,13 +25,18 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @spot = Spot.find(params[:spot_id])
     @review = Review.find(params[:id])
     if @review.user_id == current_user.id
       @review.update(review_params)
     end
   end
 
-  
+  def destroy
+    @spot = Spot.find(params[:spot_id])
+    review = Review.find(params[:id])
+    review.destroy
+  end
   
   
   private

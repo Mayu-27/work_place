@@ -66,16 +66,19 @@
             <%= link_to r.shop_name, spot_path(r)  %>
           </h3>
           <h3 class='spot-review-<%= i %>'>
+          <% if r.reviews.exists? %>
             <% r.reviews.average(:overall_evaluation).round %>
+          <% end %>
           </h3>
           <div class='spot-address'>
             <span><%= r.address %></span>
           </div>
         </div>
         </li>
-      
+    
+    <% if r.reviews.exists? %>
     <script>
-    $(document).on("turbolinks:load", function() {
+   
       $('.spot-review-<%= i %>').raty({
         size: 36,
         starOff:  '<%= asset_path('star-off.png') %>',
@@ -85,8 +88,9 @@
         readOnly: true,
         score: <%= r.reviews.average(:overall_evaluation).round %>,
       })
-    })
+    
      </script> 
+     <% end %>
      
      <% end %>
 

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
   post '/spots/:spot_id/reviews/:id/edit', to: 'reviews#update'
+  delete '/spots/:spot_id/reviews/:id', to: 'reviews#destroy'
 end
 
 
