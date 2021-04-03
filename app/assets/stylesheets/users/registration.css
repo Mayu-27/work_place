@@ -2,9 +2,10 @@
   width: 100%;
   min-width: 800px;
   height: 100%;
-  background-color: #f5f5f5;
   display: flex;
   justify-content: center;
+  background-image: url(../cowrking_cafe.jpg);
+  background-size: cover;
 }
 
 /* form-wrapは商品購入画面でも使用しています */
@@ -12,6 +13,8 @@
   width: 50%;
   background-color: white;
   padding-bottom: 70px;
+  margin: 50px 0px;
+  
 }
 
 .form-header {
@@ -45,7 +48,7 @@
 }
 
 .form-text {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -144,8 +147,8 @@
 
 .register-red-btn {
   width: 100%;
-  background: #ea352d;
-  border: 1px solid #ea352d;
+  background: #FF6347;
+  border: 1px solid #FF6347;
   color: #fff;
   line-height: 48px;
   font-size: 14px;
