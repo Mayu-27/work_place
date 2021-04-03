@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :new, :create, :edit, :update, :destroy]
     resource :favorites, only: [:create, :destroy]
   end
+  post '/spots/:spot_id/reviews/:id/edit', to: 'reviews#update'
 end
 
 

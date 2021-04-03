@@ -7,6 +7,7 @@
 
   <%= form_with model: @review, url: spot_reviews_path(spot_id: @spot), method: :post, local: true do |f| %>
 
+  <%= render 'shared/review_error_messages', model: @review %>
 
   <div class="info_form">
   <div class = "main-form">

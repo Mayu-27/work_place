@@ -7,10 +7,7 @@
     <% if @favorites.present?%>
       <% @favorites.each do |favorite| %>
         <div class = "favorite-detail">
-        <%# <div class="content_post" style="background-image: url(<%= tweet.image %> 
           <p><%= link_to favorite.spot.shop_name, spot_path(favorite.spot) %></p>
-
-        <%# </div>  %>
         </div>
       <% end  %>
     <% else %>

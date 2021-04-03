@@ -45,6 +45,7 @@
 .form-text-wrap {
   width: 100%;
   height: 20%;
+  
 }
 
 .form-text {
@@ -100,6 +101,7 @@
 .input-birth-wrap {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 .input-birth-wrap select {

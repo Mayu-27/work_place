@@ -95,7 +95,7 @@
           <div class = "congestion-<%= index %>">混雑度　　　<% review.congestion %></div>
           <div class = "corona_countermeasure-<%= index %>">コロナ対策　<% review.corona_countermeasure %></div>
             <% if review.user_id == current_user.id %>
-              <%= link_to "編集", "#" %>
+              <%= link_to "編集", edit_spot_review_path(@spot.id, review.id) %>
               <%# <%= link_to "編集", edit_spot_review_path(@review.spot_id, @spot.id) %> 
               <%= link_to "削除", "#" %>
             <% end %> 
