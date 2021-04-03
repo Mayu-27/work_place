@@ -18,3 +18,13 @@
   text-align: center;
   color: red;
 }
+
+.registration-main {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: url(../cowrking.jpg);
+  background-size: cover;
+}
