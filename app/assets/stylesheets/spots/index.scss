@@ -8,8 +8,8 @@ a {
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
-  // background-image: linear-gradient(to bottom, white, gray), url(../top_image01.jpg); 
-  background-image: url(../top_image01.jpg);
+  background: linear-gradient(315deg, rgba(250, 68, 101, 0.6), rgba(105, 188, 200, 0.6)) ,url(../top_image01.jpg);
+  
   background-size: cover;
   
 
@@ -185,7 +185,7 @@ a {
 
 .feature-contents>.title::after {
   content: '';
-  width: 310px;
+  width: 400px;
   height: 4px;
   background-color: #FF6347;
   position: absolute;

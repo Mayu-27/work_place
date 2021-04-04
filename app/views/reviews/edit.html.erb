@@ -5,6 +5,8 @@
     クチコミ編集
   </div>
 
+<%= render 'shared/review_error_messages', model: @review %>
+
 <%= form_with model: @review, url: spot_review_path(@spot.id), method: :patch, local: true do |f| %> 
 
   <div class="info_form">

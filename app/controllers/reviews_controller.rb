@@ -27,8 +27,10 @@ class ReviewsController < ApplicationController
   def update
     @spot = Spot.find(params[:spot_id])
     @review = Review.find(params[:id])
-    if @review.user_id == current_user.id
-      @review.update(review_params)
+    if @review.update(review_params)
+      redirect_to root_path
+    else
+      render :edit    
     end
   end
 

@@ -19,11 +19,11 @@
 .form-control{
   width: 70vw;
   height: 90px;
+  margin-top: 5px;
+  display: block;
 }
 
-.form-control{
-  margin-top: 25px;
-}
+
 
 .sub_form-title{
   margin-top: 25px;
