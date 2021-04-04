@@ -10,16 +10,16 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.create(review_params)
+    @spot = Spot.find(params[:spot_id])
+    @review = Review.new(review_params)
     if @review.save
-      redirect_to root_path
+      redirect_to spot_path(@spot)
     else
       render :new
     end
   end
 
   def edit
-    # @review = Review.find(id: params[:id])
     @spot = Spot.find(params[:spot_id])
     @review = Review.find(params[:id])
   end
@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
     @spot = Spot.find(params[:spot_id])
     @review = Review.find(params[:id])
     if @review.update(review_params)
-      redirect_to root_path
+      redirect_to spot_path(@spot)
     else
       render :edit    
     end
