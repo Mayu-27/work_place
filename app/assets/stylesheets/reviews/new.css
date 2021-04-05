@@ -16,7 +16,7 @@
 
 .page-title{
   font-weight: bold;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
   font-size: 25px;
 }
 
@@ -46,7 +46,7 @@
   display: inline-block;
   max-width: 180px;
   text-align: center;
-  background-color: #6495ED;
+  background-color: #B0C4DE;
   font-size: 16px;
   color: #FFF;
   text-decoration: none;
@@ -67,6 +67,11 @@
   opacity: 0.8;
 }
 
+.main-form{
+  width: 70vw;
+  background-color: #f8f8f8;
+  margin: 0 auto;
+}
 
 
 
