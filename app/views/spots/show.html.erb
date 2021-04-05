@@ -58,10 +58,6 @@
     </div>
 
     <script>
-    window.onpageshow = function(){
-      if (event.persisted) {
-		    window.location.reload();
-      }
       $('.average-review-rating-<%= @spot.reviews.average(:overall_evaluation).round %>').raty({
         size: 36,
         starOff:  '<%= asset_path('star-off.png') %>',
@@ -69,9 +65,8 @@
         starHalf: '<%= asset_path('star-half.png') %>',
         half: true,
         readOnly: true,
-        score: <%= @spot.reviews.average(:overall_evaluation).round %>,
-      })
-    };
+        score: <%= @spot.reviews.average(:overall_evaluation).round(1) %>,
+      });
     </script>  
   
     <div class="reviews-box">

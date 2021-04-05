@@ -67,7 +67,7 @@
           </h3>
           <h3 class='spot-review-<%= i %>'>
           <% if r.reviews.exists? %>
-            <% r.reviews.average(:overall_evaluation).round %>
+            <% r.reviews.average(:overall_evaluation).round(1) %>
           <% end %>
           </h3>
           <div class='spot-address'>
@@ -86,7 +86,7 @@
         starHalf: '<%= asset_path('star-half.png') %>',
         half: true,
         readOnly: true,
-        score: <%= r.reviews.average(:overall_evaluation).round %>,
+        score: <%= r.reviews.average(:overall_evaluation).round(1) %>,
       })
     
      </script> 
