@@ -20,11 +20,13 @@
   <div class = "review-lists-title"><%= @user.nickname %>さんのクチコミ一覧</div>
 　<div class = "review-lists">
     <div class = "review-lists-content"></div>
-    <% if @reviews.present?%>
+    <% if @reviews.present? %>
       <% @reviews.each_with_index do |review, index| %>
+        <% if review.user_id == current_user.id %>
+        <% review_exists = true %>
         <div class = "review-detail">
           <p><%= link_to review.spot.shop_name, spot_path(review.spot) %></p>
-          <p class = "user-detail-overall_evaluation-<%= index %>"><%= review.overall_evaluation %></p>
+          <p class = "user-detail-overall_evaluation-<%= index %>"><% review.overall_evaluation %></p>
    
         <script>
           $('.user-detail-overall_evaluation-<%= index %>').raty({
@@ -37,8 +39,11 @@
             score: <%= review.overall_evaluation %>,
           });
         </script> 
+
         </div>
-      <% end  %>
+        <% end %>
+      <% end %>
+
     <% else %>
     　<div class ="no-review-message">
         <%= "クチコミはまだありません。" %>
