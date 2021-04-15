@@ -8,7 +8,7 @@ FactoryBot.define do
     congestion         {Faker::Number.between(from: 1, to: 5)}
     corona_countermeasure {Faker::Number.between(from: 1, to: 5)}
     user_id             { FactoryBot.create(:user).id }
-    spot_id             {　FactoryBot.create(:spot).id }
+    spot_id             { FactoryBot.create(:spot).id }
     
   end
 end
