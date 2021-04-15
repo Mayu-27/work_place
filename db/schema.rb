@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_20_090025) do
+ActiveRecord::Schema.define(version: 2021_04_15_124853) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_090025) do
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.float "overall_evaluation", null: false
-    t.text "comment"
+    t.text "comment", null: false
     t.float "atmosphere", null: false
     t.float "network_stability", null: false
     t.float "facility", null: false
