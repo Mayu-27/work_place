@@ -8,6 +8,11 @@ ja:
        last_name: 姓
        kana_first_name: 名前（カナ）
        kana_last_name: 姓（カナ）
-    #  tweet:
-    #    text: テキスト
-    #    image: 画像
+     review:
+       overall_evaluation: 総合評価
+       comment: コメント
+       atmosphere: 雰囲気
+       facility: 店内設備
+       network_stability: ネット環境
+       congestion: 混雑度
+       corona_countermeasure: コロナ対策
