@@ -82,7 +82,7 @@ RSpec.describe User, type: :model do
       it "パスワードと確認が一致していないと登録できない" do
         @user.password_confirmation = ""
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+        expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
       end   
       it 'emailに@が含まれていないと登録できない' do
         @user.email = 'testgmail.com'
