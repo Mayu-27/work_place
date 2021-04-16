@@ -23,7 +23,6 @@
 | Column             | Type    | Options     |
 | ------------------ | ------  | ----------- |
 | shop_name          | string  | null: false |
-| genre_id           | integer | null: false |
 | address            | string  | null: false |
 | phone_number       | string  | null: false |
 | opening_hours      | string  | null: false |
@@ -44,9 +43,9 @@
 | comment            | text    | null: false |
 | atmosphere         | float   | null: false |
 | facility           | float   | null: false |
+| network_stability  | float   | null: false |
 | congestion         | float   | null: false |
-| countermeasure     | float   | null: false |
-| client             | integer | null: false |
+| corona_countermeasure | float | null: false |
 | user               | references  | null: false |
 | spot               | references  | null: false, foreign_key: true |
 
@@ -59,8 +58,8 @@
 
 | Column             | Type       | Options     |
 | ------------------ | ---------- | ----------- |
-| spot               | references | null: false |
 | user               | references | null: false |
+| spot               | references | null: false |
 
 ### Association
 - belongs_to :user

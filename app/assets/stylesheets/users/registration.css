@@ -4,11 +4,10 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  background-image: url(../cowrking.jpg);
+  background-image: url(../coworking_cafe.jpg);
   background-size: cover;
 }
 
-/* form-wrapは商品購入画面でも使用しています */
 .form-wrap {
   width: 50%;
   background-color: white;

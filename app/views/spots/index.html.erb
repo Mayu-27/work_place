@@ -10,14 +10,12 @@
     </div>
   </div>
   
-
   <div class='feature-contents'>
     <h2 class='title'>
       About CoworkingSpot
     </h2>
     <ul class='feature-lists'>
       <li class='list'>
-        
         <h3 class='feature-list-text'>
           リモートワーク・勉強に最適な場所を見つけよう
         </h3>
@@ -30,7 +28,6 @@
         </p>
       </li>
       <li class='list'>
-        
         <h3 class='feature-list-text'>
           リアルなクチコミ
         </h3>
@@ -41,11 +38,9 @@
           お店の雰囲気・ネット環境・店内設備などリアルなクチコミを掲載。
         </p>
       </li>
-      
     </ul>
   </div>
   
-  <%# 商品一覧 %>
   <div class='item-contents'>
     <h2 class='favorite-list-title'>ピックアップスポット</h2>
     <ul class='item-lists'>
@@ -67,30 +62,23 @@
           </div>
         </div>
         </li>
-    
-    <% if r.reviews.exists? %>
-    <script>
-   
-      $('.spot-review-<%= i %>').raty({
-        size: 36,
-        starOff:  '<%= asset_path('star-off.png') %>',
-        starOn : '<%= asset_path('star-on.png') %>',
-        starHalf: '<%= asset_path('star-half.png') %>',
-        half: true,
-        readOnly: true,
-        score: <%= r.reviews.average(:overall_evaluation).round(1) %>,
-      })
-    
-     </script> 
-     <% end %>
-     
-     <% end %>
+          <% if r.reviews.exists? %>
+            <script>
+              $('.spot-review-<%= i %>').raty({
+                size: 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                half: true,
+                readOnly: true,
+                score: <%= r.reviews.average(:overall_evaluation).round(1) %>,
+              })
+            </script> 
+          <% end %>
+    <% end %>
 
-      <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
-      <%# 商品がある場合は表示されないようにしましょう %>
       <li class='list'>
         <%= link_to '#' do %>
-        <%#= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
         <div class='spot-info'>
           <h3 class='spot-name'>
             店舗名
@@ -104,11 +92,8 @@
         </div>
         <% end %>
       </li>
-      <%# //商品がある場合は表示されないようにしましょう %>
-      <%# //商品がない場合は以下のダミー商品が表示されるようにしましょう %>
     </ul>
   </div>
-  <%# /商品一覧 %>
 </div>
 
 
@@ -116,7 +101,6 @@
 <%#　Google Mapの表示 %>
 
 <div id='map'></div>
-
 <style>
 #map{
   height: 700px;
@@ -124,7 +108,6 @@
 </style>
 
 <script>
-
 function initMap(){
   var capital = {lat: 35.68123620000001, lng:139.7671248};
   var mapArea = document.getElementById('map');
@@ -133,8 +116,6 @@ function initMap(){
     zoom: 14,
   };
   var map = new google.maps.Map(mapArea, mapOptions);
-    
-  //解説2：変数 markerOptions
   
   <% @spots.each do |spot| %>
   (function(){

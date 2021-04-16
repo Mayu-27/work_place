@@ -20,7 +20,6 @@
     <%= f.hidden_field :overall_evaluation, class:'col-md-3 col-form-label' %>
   </div>
 
-  <!-- 口コミ -->
   <div class="info_form">
     <div class="col-md-9"> 
       <%= f.text_area :comment, class: "form-control", rows: "8", placeholder:'まずは投稿してみましょう！' %>
@@ -59,7 +58,6 @@
     </div>  
   </div> 
 <% end %>
-
 </div>
 </div>
 
@@ -68,48 +66,44 @@
     starOn: "<%= asset_path('star-on.png') %>",
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
-    scoreName: 'review[overall_evaluation]' //登録するモデル名とカラム名を記述
+    scoreName: 'review[overall_evaluation]' 
   });
 
   $('#detail_evaluate_stars01').raty({
     starOn: "<%= asset_path('star-on.png') %>",
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
-    scoreName: 'review[atmosphere]' //登録するモデル名とカラム名を記述
+    scoreName: 'review[atmosphere]' 
   });
 
   $('#detail_evaluate_stars02').raty({
     starOn: "<%= asset_path('star-on.png') %>",
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
-    scoreName: 'review[facility]' //登録するモデル名とカラム名を記述
+    scoreName: 'review[facility]' 
   });
 
   $('#detail_evaluate_stars03').raty({
     starOn: "<%= asset_path('star-on.png') %>",
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
-    scoreName: 'review[network_stability]' //登録するモデル名とカラム名を記述
+    scoreName: 'review[network_stability]' 
   });
 
   $('#detail_evaluate_stars04').raty({
     starOn: "<%= asset_path('star-on.png') %>",
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
-    scoreName: 'review[congestion]' //登録するモデル名とカラム名を記述
+    scoreName: 'review[congestion]' 
   });
 
   $('#detail_evaluate_stars05').raty({
     starOn: "<%= asset_path('star-on.png') %>",
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
-    scoreName: 'review[corona_countermeasure]' //登録するモデル名とカラム名を記述
+    scoreName: 'review[corona_countermeasure]' 
   });
 </script>
-
-
-
-<!-- /口コミ入力フォーム -->
 
 <%= render "shared/footer" %>
 
