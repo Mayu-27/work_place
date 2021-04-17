@@ -4,26 +4,21 @@ class FavoritesController < ApplicationController
 
   def create　
     @favorite = Favorite.new(user_id: current_user.id, spot_id: @spot.id)
-    if @favorite.save 
+    if @favorite.save
       redirect_to user_path(current_user)
     else
       render :show
     end
   end
- 
+
   def destroy
     @favorite = Favorite.find_by(user_id: current_user.id, spot_id: @spot.id)
-    if @favorite.destroy
-      redirect_to user_path(current_user)
-    end
+    redirect_to user_path(current_user) if @favorite.destroy
   end
 
   private
+
   def set_spot
     @spot = Spot.find(params[:spot_id])
   end
-
 end
-
-
-

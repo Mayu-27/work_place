@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-  
+
   def index
   end
 
@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
     if @review.update(review_params)
       redirect_to spot_path(@spot)
     else
-      render :edit    
+      render :edit
     end
   end
 
@@ -39,11 +39,12 @@ class ReviewsController < ApplicationController
     review = Review.find(params[:id])
     review.destroy
   end
-  
-  
-  private
-  def review_params
-    params.require(:review).permit(:overall_evaluation, :comment, :atmosphere, :network_stability, :facility, :congestion, :corona_countermeasure).merge(user_id: current_user.id, spot_id: params[:spot_id])
-  end
 
+  private
+
+  def review_params
+    params.require(:review).permit(:overall_evaluation, :comment, :atmosphere, :network_stability, :facility, :congestion, :corona_countermeasure).merge(
+      user_id: current_user.id, spot_id: params[:spot_id]
+    )
+  end
 end

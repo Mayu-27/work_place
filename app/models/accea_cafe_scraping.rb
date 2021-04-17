@@ -1,10 +1,9 @@
-
-module AcceaCafeScraping 
+module AcceaCafeScraping
   require 'selenium-webdriver'
 
-  def set_accea_cafes 
+  def set_accea_cafes
     driver = Selenium::WebDriver.for :chrome
-    driver.navigate.to "http://cafe.accea.co.jp/#access"
+    driver.navigate.to 'http://cafe.accea.co.jp/#access'
 
     names = driver.find_elements(:class, 'si__shopName')
 
@@ -19,21 +18,21 @@ module AcceaCafeScraping
     phone_number_list = []
 
     3.times do |n|
-      element = driver.find_element(:xpath ,"//*[@id='access']/div/div/ul/li[#{n+1}]/a").attribute('href')
+      element = driver.find_element(:xpath, "//*[@id='access']/div/div/ul/li[#{n + 1}]/a").attribute('href')
       url << element
     end
 
     url.each do |u|
       driver.navigate.to u
-      shop_address = driver.find_element(:class ,"mb20").text  
-      phone_number = driver.find_element(:class ,"storeInfo_td").text  
+      shop_address = driver.find_element(:class, 'mb20').text
+      phone_number = driver.find_element(:class, 'storeInfo_td').text
       address_list << shop_address
       # phone_number_list << phone_number
     end
 
     data = shop_list.zip(address_list).to_h
     shop_names = data.keys
-  
+
     shop_names.each do |shop_name|
       spot = Spot.where(shop_name: shop_name).first_or_initialize
       spot.shop_name = shop_name
@@ -43,8 +42,3 @@ module AcceaCafeScraping
     end
   end
 end
-
-
-
-
-

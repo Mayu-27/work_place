@@ -8,7 +8,7 @@ class Spot < ApplicationRecord
     validates :shop_name
     validates :address
   end
- 
+
   def favorited_by?(user, spot)
     Favorite.where(user_id: user, spot_id: spot).exists?
   end
