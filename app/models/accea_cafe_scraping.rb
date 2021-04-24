@@ -1,8 +1,13 @@
 module AcceaCafeScraping
   require 'selenium-webdriver'
 
+  options = Selenium::WebDriver::Chrome::Options.new
+  options.add_argument('--headless')
+  options.add_argument('--disable-gpu')
+
   def set_accea_cafes
-    driver = Selenium::WebDriver.for :chrome
+    driver = Selenium::WebDriver.for :chrome, options: options
+    
     driver.navigate.to 'http://cafe.accea.co.jp/#access'
 
     names = driver.find_elements(:class, 'si__shopName')
