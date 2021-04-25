@@ -6,6 +6,7 @@ module AcceaCafeScraping
   options.add_argument('--disable-gpu')
   options.add_argument("--disable-dev-shm-usage"); 
   options.add_argument('--no-sandbox')
+  options.add_argument("--remote-debugging-port=9222") 
 
   def set_accea_cafes
     driver = Selenium::WebDriver.for :chrome, options: options
