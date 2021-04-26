@@ -2,15 +2,11 @@ module AcceaCafeScraping
   require 'selenium-webdriver'
 
   options = Selenium::WebDriver::Chrome::Options.new
-  # options.add_argument('--no-sandbox')
-  # options.add_argument('--headless')
-  # options.add_argument('--disable-gpu')
-  # options.add_argument("--disable-dev-shm-usage"); 
-  # options.add_argument("--remote-debugging-port=9222") 
-
-  options.add_argument("no-sandbox")
-  options.add_argument("--disable-extensions")
-  options.add_argument("--headless")
+  options.add_argument('--no-sandbox')
+  options.add_argument('--headless')
+  options.add_argument('--disable-gpu')
+  options.add_argument("--disable-dev-shm-usage"); 
+  options.add_argument("--remote-debugging-port=9222") 
 
   def set_accea_cafes
     driver = Selenium::WebDriver.for :chrome, options: options
@@ -27,7 +23,7 @@ module AcceaCafeScraping
 
     url = []
     address_list = []
-    phone_number_list = []
+    # phone_number_list = []
 
     3.times do |n|
       element = driver.find_element(:xpath, "//*[@id='access']/div/div/ul/li[#{n + 1}]/a").attribute('href')
@@ -37,7 +33,7 @@ module AcceaCafeScraping
     url.each do |u|
       driver.navigate.to u
       shop_address = driver.find_element(:class, 'mb20').text
-      phone_number = driver.find_element(:class, 'storeInfo_td').text
+      # phone_number = driver.find_element(:class, 'storeInfo_td').text
       address_list << shop_address
       # phone_number_list << phone_number
     end
