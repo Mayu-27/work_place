@@ -1,7 +1,7 @@
 
 lock '3.16.0'
 
-set :application, 'Coworking Spot'
+set :application, 'Coworking_Spot'
 
 set :repo_url,  'git@github.com:Mayu-27/work_place.git'
 
