@@ -7,7 +7,8 @@ a {
 }
 
 .title-contents {
-  background: linear-gradient(315deg, rgba(250, 68, 101, 0.6), rgba(105, 188, 200, 0.6)) ,url(../top_image01.jpeg);
+  background: linear-gradient(315deg, rgba(250, 68, 101, 0.6), rgba(105, 188, 200, 0.6)) ,url(/images/top_image01.jpeg);
+  // background-image: image-url('top_image01.jpeg');
   background-size: cover;
   width: 100vw;
   background-repeat: no-repeat;
