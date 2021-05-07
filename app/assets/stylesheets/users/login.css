@@ -25,6 +25,7 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  background-image: url(../coworking_cafe.jpg);
+  background-image: url('/images/coworking_cafe.png');
   background-size: cover;
 }
+

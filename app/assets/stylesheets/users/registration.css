@@ -4,7 +4,7 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  background-image: url(../coworking_cafe.jpg);
+  background-image: url('/images/coworking_cafe.png');
   background-size: cover;
 }
 
@@ -13,7 +13,6 @@
   background-color: white;
   padding-bottom: 70px;
   margin: 50px 0px;
-  
 }
 
 .form-header {
