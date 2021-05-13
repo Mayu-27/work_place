@@ -3,6 +3,7 @@ class Spot < ApplicationRecord
   after_validation :geocode, if: :address_changed?
   has_many :users, through: :favorites, dependent: :destroy
   has_many :reviews
+  has_one_attached :img
 
   with_options presence: true do
     validates :shop_name

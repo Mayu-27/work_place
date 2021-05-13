@@ -7,6 +7,9 @@
     
     <table class="detail-table">
       <tbody>
+      <div class = "shop_img">
+        <%#= image_tag @spot.img, class: 'shop-image' %>
+      </div>
       <% if @spot.reviews.present? %>
         <tr>
           <th class="detail-item">クチコミ評価</th>
