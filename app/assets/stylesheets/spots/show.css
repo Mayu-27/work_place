@@ -180,3 +180,7 @@
 .fix-btn:hover {
   opacity: 0.8;
 }
+
+.item-explain-box{
+  margin-bottom: 30px
+}
