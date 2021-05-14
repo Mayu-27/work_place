@@ -1,8 +1,9 @@
-class Scraping
-  require 'nokogiri'
-  require 'open-uri'
+require 'nokogiri'
+require 'open-uri'
 
-  def self.get_info
+class Scraping
+
+  def self.set_info
     url = "https://goworkship.com/magazine/tokyo-coworking-space/"
     doc = Nokogiri::HTML(open(url),nil,"utf-8")
     tables = doc.css("table")
@@ -42,20 +43,23 @@ class Scraping
       opening_hour = table.css('tbody > tr[5] > td[2]')
       opening_hour_list << opening_hour.text
     end
+  end
 
-
+  def self.get_spot(name_list)
     name_list.each do |shop_name|
-      # spot = Spot.where(shop_name: shop_name).first_or_initialize
-      spot = Spot.new(shop_name: shop_name)
-    
-      # spot.shop_name = shop_name
+      spot = Spot.where(shop_name: shop_name).first_or_initialize
+      spot.shop_name = shop_name
       spot.save
     end
-
   end
+
 end
 
-
+    # book = Book.where(title: title).first_or_initialize
+    # book.image_url = image_url
+    # book.detail = detail
+    # # インスタンスのカラムに値を代入後をレコードとして保存
+    # book.save
   
 
 # name_list.each do |name|
