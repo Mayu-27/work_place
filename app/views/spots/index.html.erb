@@ -111,11 +111,11 @@ function initMap(){
     var marker = new google.maps.Marker({
       position: markerLatLng,
       map: map, 
-      // icon: {
-      //   url: 'spot-icon.png',
-      //   scaledSize: new google.maps.Size(40, 40), //マーカーのサイズを縮小
-      //   anchor: new google.maps.Point(20, 65) //マーカーの表示位置を25pxだけ上に
-		  // } 
+      icon: {
+        url: '/images/spot-icon.png',
+        scaledSize: new google.maps.Size(40, 40), 
+        anchor: new google.maps.Point(20, 65) 
+		  } 
       }); 
  
     var infoWindow = new google.maps.InfoWindow({ 
@@ -125,9 +125,9 @@ function initMap(){
     marker.addListener('mouseover', function() { 
       infoWindow.open(mapArea, marker); 
     });
-    marker.addListener('mouseout', function(){
-      infoWindow.close();
-    });
+    // marker.addListener('mouseout', function(){
+    //   infoWindow.close();
+    // });
 
   })();
   <% end %>
