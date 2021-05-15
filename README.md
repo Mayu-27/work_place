@@ -46,7 +46,7 @@ unicorn
 Google Maps API
 
 ## スクレイピング
-Selenium, Chromedriver
+Nokogiri
 
 ## ソース管理
 GitHub, GitHubDesktop

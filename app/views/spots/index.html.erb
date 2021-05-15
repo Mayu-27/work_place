@@ -76,30 +76,11 @@
             </script> 
           <% end %>
     <% end %>
-
-      <li class='list'>
-        <%= link_to '#' do %>
-        <div class='spot-info'>
-          <h3 class='spot-name'>
-            店舗名
-          </h3>
-          <div class='star-btn'>
-              <%= "レビュー平均点" %>
-          </div>
-          <div class='spot-address'>
-            <span>住所</span>
-          </div>
-        </div>
-        <% end %>
-      </li>
     </ul>
   </div>
 </div>
 
-
-
 <%#　Google Mapの表示 %>
-
 <div id='map'></div>
 <style>
 #map{
@@ -137,13 +118,17 @@ function initMap(){
 		  // } 
       }); 
  
-    var infoWindow = new google.maps.InfoWindow({ // 吹き出しの追加
+    var infoWindow = new google.maps.InfoWindow({ 
       position: markerLatLng,
-      content: contentString // 吹き出しに表示する内容
+      content: contentString
     });
     marker.addListener('mouseover', function() { 
       infoWindow.open(mapArea, marker); 
     });
+    marker.addListener('mouseout', function(){
+      infoWindow.close();
+    });
+
   })();
   <% end %>
 }
