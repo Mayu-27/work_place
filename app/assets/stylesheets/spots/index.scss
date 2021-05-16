@@ -17,7 +17,7 @@ a {
   align-items: flex-start;
   justify-content: center;
   padding: 5vh 15vw;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
   height: 850px;
 }
 
@@ -225,8 +225,9 @@ a {
 
 .item-lists>.list {
   padding: 10px;
-  height: 200px;
+  height: 400px;
   background-color: #FFF;
+  margin: 10px;
 }
 
 
@@ -252,7 +253,7 @@ a {
 }
 
 .spot-address {
-  font-size: 17px;
+  font-size: 14px;
   display: flex;
   justify-content: space-between;
   padding: 5px;
@@ -299,3 +300,12 @@ a {
   object-fit: cover; 
 }
 
+.spot-sample{
+  width: 200px;
+  height: 200px;
+  
+}
+
+.pickup-spot-image{
+  text-align: center;
+}

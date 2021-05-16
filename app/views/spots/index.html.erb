@@ -4,7 +4,7 @@
 
   <div class='title-contents'>
     <h2 class='service-title'>
-      ニューノーマル時代の働き方をもっと便利に
+      ニューノーマル時代の働き方を<br>もっと便利に
     </h2>
     <div class='search-bar-contents'>
     </div>
@@ -17,7 +17,7 @@
     <ul class='feature-lists'>
       <li class='list'>
         <h3 class='feature-list-text'>
-          リモートワーク・勉強に最適な場所を見つけよう
+          リモートワーク・勉強に最適な<br>場所を見つけよう
         </h3>
         <div class = "feature-image">
           <%= image_tag "/images/coworking.png", class: "feature-pic" %>
@@ -49,6 +49,13 @@
         <div class='item-img-content'>
         </div>
         <div class='spot-info'>
+          <div class = "pickup-spot-image">
+            <%if r.img.exist? %>
+             <%= image_tag r.img %>
+            <% else %>
+             <%= image_tag 'spot-sample-icon.png', class: 'spot-sample' %>
+            <% end %>
+          </div>
           <h3 class='spot-name'>
             <%= link_to r.shop_name, spot_path(r)  %>
           </h3>
@@ -113,7 +120,7 @@ function initMap(){
       map: map, 
       icon: {
         url: '/images/marker-icon.png',
-        scaledSize: new google.maps.Size(35, 35), 
+        scaledSize: new google.maps.Size(30, 35), 
         anchor: new google.maps.Point(20, 65) 
 		  } 
       }); 
