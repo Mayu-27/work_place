@@ -100,8 +100,8 @@
           <div class = "corona_countermeasure-<%= index %>">コロナ対策　<% review.corona_countermeasure %></div>
           <% if user_signed_in? %>
             <% if review.user_id == current_user.id %>
-              <%= link_to "編集", edit_spot_review_path(@spot.id, review.id), class: "fix-btn" %>
-              <%= link_to "削除", spot_review_path(@spot.id, review.id), method: :delete, class: "fix-btn" %>
+              <%= link_to "クチコミを編集", edit_spot_review_path(@spot.id, review.id), class: "fix-btn" %>
+              <%= link_to "クチコミを削除", spot_review_path(@spot.id, review.id), method: :delete, class: "fix-btn" %>
             <% end %> 
           <% end %>
         </div>
