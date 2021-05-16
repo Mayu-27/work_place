@@ -184,3 +184,10 @@
 .item-explain-box{
   margin-bottom: 30px
 }
+
+.shop-image{
+  margin: 15px 0px;
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+}

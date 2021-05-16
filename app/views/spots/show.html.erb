@@ -8,7 +8,11 @@
     <table class="detail-table">
       <tbody>
       <div class = "shop_img">
-        <%#= image_tag @spot.img, class: 'shop-image' %>
+        <% if @spot.img.exist? %>
+          <%= image_tag @spot.img, class: 'shop-image' %>
+        <% else %>
+          <%= image_tag 'spot-sample-icon.png', class: 'shop-image' %>
+        <% end %>
       </div>
       <% if @spot.reviews.present? %>
         <tr>
