@@ -19,7 +19,7 @@
             <% end %>
           </div>
           <div class = "delete-favorite">
-            <%= link_to "お気に入りから外す", spot_favorites_path(favorite.spot), method: :delete %>
+            <%= link_to "お気に入りから外す", spot_favorites_path(favorite.spot), method: :delete, class: 'mypage-btn' %>
           </div>
         </div>
       <% end  %>
@@ -42,7 +42,7 @@
           <p><%= link_to review.spot.shop_name, spot_path(review.spot) %></p>
           <p class = "user-detail-overall_evaluation-<%= index %>"><% review.overall_evaluation %></p>
           <div class = "reviewed-spots">
-            <%= link_to "クチコミを編集", edit_spot_review_path(review.spot.id, review.id), class: "mypage_edit_btn" %>
+            <%= link_to "クチコミを編集", edit_spot_review_path(review.spot.id, review.id), class: "mypage-btn" %>
           </div>
         <script>
           $('.user-detail-overall_evaluation-<%= index %>').raty({

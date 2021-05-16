@@ -36,7 +36,7 @@
 
 .favorite-detail{
   width: 270px;
-  height: 270px;
+  height: 300px;
   margin: 15px 5px;
   flex-wrap: wrap;
 }
@@ -56,7 +56,7 @@
 }
 
 .review-lists-title{
-  margin-top: 35px;
+  margin-top: 60px;
 }
 
 .favorite-spot-image{
@@ -72,4 +72,29 @@
 
 .favorite-lists-title{
   font-weight: bold;
+}
+
+.mypage-btn {
+  display: inline-block;
+  max-width: 180px;
+  text-align: center;
+  background-color: #B0C4DE;
+  font-size: 16px;
+  color: #FFF;
+  text-decoration: none;
+  padding: 8px 16px 8px 16px;
+  border-radius: 4px;
+  position: relative;
+  margin: 0 0 0 10px;
+}
+
+.mypage-btn:before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  margin-top: -8px;
+}
+
+.mypage-btn:hover {
+  opacity: 0.8;
 }
