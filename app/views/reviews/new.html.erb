@@ -12,10 +12,10 @@
   <div class="info_form">
   <div class = "main-form">
     <div class = "shop_info">
-      <%= "店舗名 #{@spot.shop_name}" %> 
+      <%= "店舗名　　#{@spot.shop_name}" %> 
     </div>  
     <div id="evaluate_stars">
-      <%= f.label :overall_evaluation,'総合評価 ', class:'col-md-3 col-form-label' %>
+      <%= f.label :overall_evaluation,'総合評価　', class:'col-md-3 col-form-label' %>
       <%= f.hidden_field :overall_evaluation, class:'col-md-3 col-form-label' %>
     </div>
     <div class = "review-explain">※適切なところで星マークをクリックしてください</div>
@@ -26,26 +26,26 @@
     </div> 
   </div>
   <div class = "sub-form">
-    <div class = "sub_form-title">◆詳細評価◆</div>
+    <div class = "sub_form-title">詳細評価</div>
     <div class = "review-explain">※適切なところで星マークをクリックしてください</div>
       <div id="detail_evaluate_stars01">
-        <%= f.label :atmosphere,'雰囲気 ', class:'col-md-3 col-form-label' %>
+        <%= f.label :atmosphere,'雰囲気　　', class:'col-md-3 col-form-label' %>
         <%= f.hidden_field :atmosphere, class:'col-md-3 col-form-label' %>
       </div>
       <div id="detail_evaluate_stars02">
-        <%= f.label :facility,'店内設備 ', class:'col-md-3 col-form-label' %>
+        <%= f.label :facility,'店内設備　', class:'col-md-3 col-form-label' %>
         <%= f.hidden_field :facility, class:'col-md-3 col-form-label' %>
       </div>
       <div id="detail_evaluate_stars03">
-        <%= f.label :network_stability,'ネット環境 ', class:'col-md-3 col-form-label' %>
+        <%= f.label :network_stability,'ネット環境', class:'col-md-3 col-form-label' %>
         <%= f.hidden_field :network_stability, class:'col-md-3 col-form-label' %>
       </div>
       <div id="detail_evaluate_stars04">
-        <%= f.label :congestion,'混雑度 ', class:'col-md-3 col-form-label' %>
+        <%= f.label :congestion,'混雑度　　', class:'col-md-3 col-form-label' %>
         <%= f.hidden_field :congestion, class:'col-md-3 col-form-label' %>
       </div>
       <div id="detail_evaluate_stars05">
-        <%= f.label :corona_countermeasure,'コロナ対策 ', class:'col-md-3 col-form-label' %>
+        <%= f.label :corona_countermeasure,'コロナ対策', class:'col-md-3 col-form-label' %>
         <%= f.hidden_field :corona_countermeasure, class:'col-md-3 col-form-label' %>
       </div>
       <div class="submit-btn">

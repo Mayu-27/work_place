@@ -23,7 +23,7 @@
 }
 
 .sub_form-title{
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 .submit-btn{
@@ -39,7 +39,7 @@
   display: inline-block;
   max-width: 180px;
   text-align: center;
-  background-color: #B0C4DE;
+  background-color: #6699CC;
   font-size: 16px;
   color: #FFF;
   text-decoration: none;
@@ -66,5 +66,8 @@
   margin: 0 auto;
 }
 
+.comment_form{
+  display: flex;
+}
 
 
