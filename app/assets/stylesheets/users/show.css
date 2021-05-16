@@ -11,36 +11,34 @@
 
 .favorite-lists{
   margin-top: 25px;
-  font-weight: bold;
   float: left;
   display: flex;
-  
+  align-items:stretch; 
+  justify-content: flex-start;
+  flex-wrap: wrap;    
 }
 
 .review-lists{
   margin-top: 25px;
-  font-weight: bold;
   float: left;
   display: flex;
+  align-items:stretch; 
+  justify-content: flex-start;
+  flex-wrap: wrap;    
 }
 
 .review-detail{
-  width: 40%;
-  height: 200px;
-  margin: 15px 20px;
+  width: 270px;
+  height: 130px;
+  margin: 15px 5px;
   flex-wrap: wrap;
 }
 
 .favorite-detail{
-  width: 40%;
-  height: 170px;
-  margin: 15px 20px;
+  width: 270px;
+  height: 270px;
+  margin: 15px 5px;
   flex-wrap: wrap;
-}
-
-.favorite-lists-title{
-  font-weight: bold;
-  /* font-size: 30px; */
 }
 
 .review-lists-title{
@@ -57,10 +55,21 @@
   margin: 0px 5px 30px 5px;
 }
 
-.favorite-detail{
-  width: 220px;
+.review-lists-title{
+  margin-top: 35px;
 }
 
-.review-lists-title{
-  margin-top: 25px;
+.favorite-spot-image{
+  width: 15vw;
+  text-align: center;
+}
+
+.favorite-spot-name{
+  height: 60px;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.favorite-lists-title{
+  font-weight: bold;
 }

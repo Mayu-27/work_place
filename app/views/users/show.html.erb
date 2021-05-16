@@ -1,13 +1,23 @@
 <%= render "shared/header" %>
 
 <div class = "user-info-box">
-  <div class = "favorite-lists"><%= @user.nickname %>さんのお気に入り一覧</div>
+  <div class = "favorite-lists-title"><%= @user.nickname %>さんのお気に入り一覧</div>
+  <div class = "favorite-lists">
   <div class="favorite-lists">
   <div class = "favorite-lists-content"></div>
     <% if @favorites.present?%>
       <% @favorites.each do |favorite| %>
         <div class = "favorite-detail">
-          <p><%= link_to favorite.spot.shop_name, spot_path(favorite.spot) %></p>
+          <div class = "favorite-spot-name">
+            <p><%= link_to favorite.spot.shop_name, spot_path(favorite.spot) %></p>
+          </div>
+          <div class = "favorite-spot-image">
+            <%if favorite.spot.img.exist? %>
+             <%= image_tag spot.img %>
+            <% else %>
+             <%= image_tag 'spot-sample-icon.png', class: 'spot-sample' %>
+            <% end %>
+          </div>
         </div>
       <% end  %>
     <% else %>
@@ -15,6 +25,7 @@
         <%= "お気に入りはまだありません。" %>
       </div>
     <% end %>
+  </div>
   </div>
 
   <div class = "review-lists-title"><%= @user.nickname %>さんのクチコミ一覧</div>
