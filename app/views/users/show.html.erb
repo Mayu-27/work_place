@@ -18,6 +18,9 @@
              <%= image_tag 'spot-sample-icon.png', class: 'spot-sample' %>
             <% end %>
           </div>
+          <div class = "delete-favorite">
+            <%= link_to "お気に入りから外す", spot_favorites_path(favorite.spot), method: :delete %>
+          </div>
         </div>
       <% end  %>
     <% else %>
