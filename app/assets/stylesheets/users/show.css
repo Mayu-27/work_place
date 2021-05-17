@@ -36,13 +36,14 @@
 
 .favorite-detail{
   width: 270px;
-  height: 300px;
+  height: 330px;
   margin: 15px 5px;
   flex-wrap: wrap;
 }
 
 .review-lists-title{
   font-weight: bold;
+  margin-top: 60px;
 }
 
 .no-review-message {
@@ -55,15 +56,10 @@
   margin: 0px 5px 30px 5px;
 }
 
-.review-lists-title{
-  margin-top: 60px;
-}
-
 .favorite-spot-image{
   width: 15vw;
   text-align: center;
 }
-
 .favorite-spot-name{
   height: 60px;
   padding: 5px;
@@ -101,4 +97,11 @@
 
 .reviewed-spot{
   height: 50px;
+}
+
+.review-detail{
+  width: 270px;
+  height: 330px;
+  margin: 15px 5px;
+  flex-wrap: wrap;
 }

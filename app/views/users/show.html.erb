@@ -41,6 +41,9 @@
         <div class = "review-detail">
           <p class = "reviewed-spot"><%= link_to review.spot.shop_name, spot_path(review.spot) %></p>
           <p class = "user-detail-overall_evaluation-<%= index %>"><% review.overall_evaluation %></p>
+          <div class = "reviewed-spot-image">
+           <%= image_tag 'spot-sample-icon.png', class: 'spot-sample' %>
+        　</div>　
           <div class = "reviewed-spots">
             <%= link_to "クチコミを編集", edit_spot_review_path(review.spot.id, review.id), class: "mypage-btn" %>
           </div>
