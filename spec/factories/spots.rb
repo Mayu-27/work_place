@@ -4,7 +4,7 @@ FactoryBot.define do
     address            { Faker::Address.street_address }
     phone_number       { Faker::Number.number(9) }
     opening_hours      { '10:00~22:00' }
-    non_business_day   { '日曜日' }
+    access             { '東京駅徒歩1分' }
     latitude           { Faker::Address.latitude }
     longitude          { Faker::Address.longitude }
   end
