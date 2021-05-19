@@ -1,5 +1,6 @@
 class SpotsController < ApplicationController
   include AcceaCafeScraping
+  before_action :search_spot, only: [:index, :serach]
 
   def index
     @spots = Spot.all
@@ -16,6 +17,11 @@ class SpotsController < ApplicationController
   end
   
   def search
+    @results = @p.result
+  end
 
+  private
+  def search_spot
+    @p = Spot.ransack(params[:q])
   end
 end
