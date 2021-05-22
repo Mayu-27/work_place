@@ -7,6 +7,10 @@
       ニューノーマル時代の働き方を<br>もっと便利に
     </h2>
     <div class='search-bar-contents'>
+      <%= search_form_for @p, url: spots_search_path do |f| %>
+      <%= f.search_field :shop_name, placeholder: " お気に入りの場所を見つけよう", class: "form-control"%>
+    <%= f.submit '検索' %>
+  <% end %>
     </div>
   </div>
   
@@ -87,7 +91,7 @@
   </div>
 </div>
 
-<%#　Google Mapの表示 %>
+<%# Google Mapの表示 %>
 <div id='map'></div>
 <style>
 #map{
