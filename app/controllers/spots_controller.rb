@@ -18,6 +18,7 @@ class SpotsController < ApplicationController
   
   def search
     @results = @p.result
+    @top_result = @results.first
   end
 
   private

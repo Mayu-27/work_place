@@ -94,7 +94,7 @@ VScode
 | address            | string  | null: false |
 | phone_number       | string  | null: false |
 | opening_hours      | string  | null: false |
-| non_business_day   | string  | null: false |
+| access             | string  | null: false |
 | latitude           | decimal | 
 | longitude          | decimal | 
 
