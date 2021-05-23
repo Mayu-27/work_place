@@ -1,0 +1,9 @@
+<h1>検索結果</h1>
+<% if @results.exists? %>
+  <div class = 'search-result-bar'>
+    <% @results.each do |result| %>
+      <%= result.shop_name %>
+      <%= result.address %>
+    <% end %>
+  </div>
+ <% end %>

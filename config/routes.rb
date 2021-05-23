@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   post '/spots/:spot_id/reviews/:id/edit', to: 'reviews#update'
   delete '/spots/:spot_id/reviews/:id', to: 'reviews#destroy'
-  get 'spots/search', to: 'spots#serach'
+  get 'search', to: 'spots#search'
 end
 
 
