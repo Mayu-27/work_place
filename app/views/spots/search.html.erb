@@ -21,19 +21,19 @@
       <% end %>
     <% end %>
   </div>
-
+</div>
 
 <%# Google Mapの表示 %>
 <div id='map'></div>
 <style>
-map{
-  height: 700px;
+#map{
+  height: 600px;
 }
 </style>
 
 <script>
 function initMap(){
-  var capital = {lat: 35.68123620000001, lng:139.7671248};
+  var capital = {lat: <%= @top_result.latitude %>, lng: <%= @top_result.longitude %>};
   var mapArea = document.getElementById('map');
   var mapOptions = {
     center: capital,
@@ -43,7 +43,7 @@ function initMap(){
   
   <% @results.each do |result| %>
   (function(){
-    var markerLatLng = new google.maps.LatLng({lat: <%= @top_result.latitude %>, lng: <%= @top_result.longitude %>}); 
+    var markerLatLng = new google.maps.LatLng({lat: <%= result.latitude %>, lng: <%= result.longitude %>}); 
     
 
     var contentString = '<div id="content">'+
@@ -68,9 +68,6 @@ function initMap(){
     marker.addListener('mouseover', function() { 
       infoWindow.open(mapArea, marker); 
     });
-    // marker.addListener('mouseout', function(){
-    //   infoWindow.close();
-    // });
 
   })();
   <% end %>
