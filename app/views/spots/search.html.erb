@@ -1,10 +1,83 @@
-<h1>検索結果</h1>
-<% if @results.exists? %>
-  <%= "#{@results.length}件のコワーキングスペースが見つかりました" %>
-  <div class = 'search-result-bar'>
-    <% @results.each do |result| %>
-      <%= result.shop_name %><br>
-      <%= result.address %>
+<%= render "shared/header" %>
+
+<div class = 'search-result-bar'>
+  <div class = 'searched-spots-title'>
+    <%= "#{@results.length}件のコワーキングスペースが見つかりました" %>
+  </div>
+  <div class = "searched-lists">
+    <% if @results.exists? %>
+      <% @results.each do |result| %>
+        <div class = "searched-spot-detail">
+          <div class = "searched-spot-image">
+            <%= image_tag 'spot-sample-icon.png', class: 'spot-sample'%>
+          </div>
+          <div class = "searched-spot-name">
+            <%= link_to result.shop_name, spot_path(result) %>
+          </div>
+          <div class = "searched-spot-address">
+            <%= result.address %>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
- <% end %>
+
+
+<%# Google Mapの表示 %>
+<div id='map'></div>
+<style>
+map{
+  height: 700px;
+}
+</style>
+
+<script>
+function initMap(){
+  var capital = {lat: 35.68123620000001, lng:139.7671248};
+  var mapArea = document.getElementById('map');
+  var mapOptions = {
+    center: capital,
+    zoom: 14,
+  };
+  var map = new google.maps.Map(mapArea, mapOptions);
+  
+  <% @results.each do |result| %>
+  (function(){
+    var markerLatLng = new google.maps.LatLng({lat: <%= @top_result.latitude %>, lng: <%= @top_result.longitude %>}); 
+    
+
+    var contentString = '<div id="content">'+
+          '<div id="bodyContent">'+ 
+          '<%= link_to "#{result.shop_name}", spot_path(result), data: {"turbolinks" => false} %>'+
+          '</div>';
+  
+    var marker = new google.maps.Marker({
+      position: markerLatLng,
+      map: map, 
+      icon: {
+        url: '/images/marker-icon.png',
+        scaledSize: new google.maps.Size(30, 35), 
+        anchor: new google.maps.Point(20, 65) 
+		  } 
+      }); 
+ 
+    var infoWindow = new google.maps.InfoWindow({ 
+      position: markerLatLng,
+      content: contentString
+    });
+    marker.addListener('mouseover', function() { 
+      infoWindow.open(mapArea, marker); 
+    });
+    // marker.addListener('mouseout', function(){
+    //   infoWindow.close();
+    // });
+
+  })();
+  <% end %>
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key= <%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+<%# Google Mapの表示 %>
+
+<%= render "shared/footer" %>

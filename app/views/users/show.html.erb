@@ -3,8 +3,6 @@
 <div class = "user-info-box">
   <div class = "favorite-lists-title"><%= @user.nickname %>さんのお気に入り一覧</div>
   <div class = "favorite-lists">
-  <div class="favorite-lists">
-  <div class = "favorite-lists-content"></div>
     <% if @favorites.present?%>
       <% @favorites.each do |favorite| %>
         <div class = "favorite-detail">
@@ -29,11 +27,9 @@
       </div>
     <% end %>
   </div>
-  </div>
 
   <div class = "review-lists-title"><%= @user.nickname %>さんのクチコミ一覧</div>
 　<div class = "review-lists">
-    <div class = "review-lists-content"></div>
     <% if @reviews.present? %>
       <% @reviews.each_with_index do |review, index| %>
         <% if review.user_id == current_user.id %>

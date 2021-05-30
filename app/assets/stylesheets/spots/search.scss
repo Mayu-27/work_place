@@ -1,0 +1,31 @@
+.search-result-bar{
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 10vw;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.searched-lists{
+  width: 100vw;
+  margin: 0 auto;
+  float: left;
+  display: flex;
+  align-items:stretch; 
+  justify-content: flex-start;
+  flex-wrap: wrap; 
+}
+
+.searched-spots-title{
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.searched-spot-detail{
+  height: 300px;
+  margin: 15px 5px;
+  width: 20%;
+}
+
