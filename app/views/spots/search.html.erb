@@ -1,11 +1,11 @@
 <%= render "shared/header" %>
 
 <div class = 'search-result-bar'>
+  <% if @results.exists? %>
   <div class = 'searched-spots-title'>
     <%= "#{@results.length}件のコワーキングスペースが見つかりました" %>
   </div>
   <div class = "searched-lists">
-    <% if @results.exists? %>
       <% @results.each do |result| %>
         <div class = "searched-spot-detail">
           <div class = "searched-spot-image">
@@ -19,21 +19,23 @@
           </div>
         </div>
       <% end %>
-    <% end %>
-  </div>
-</div>
+   </div>
 
 <%# Google Mapの表示 %>
 <div id='map'></div>
 <style>
 #map{
   height: 600px;
-}
+  }
 </style>
 
 <script>
 function initMap(){
-  var capital = {lat: <%= @top_result.latitude %>, lng: <%= @top_result.longitude %>};
+  <% if @top_result.present? %>
+    var capital = {lat: <%= @top_result.latitude %>, lng: <%= @top_result.longitude %>};
+  <% else %>
+    var capital = {lat: 35.68123620000001, lng:139.7671248};
+  <% end %>
   var mapArea = document.getElementById('map');
   var mapOptions = {
     center: capital,
@@ -75,6 +77,15 @@ function initMap(){
 
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key= <%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
-<%# Google Mapの表示 %>
+
+
+ <% else %>
+  <div class = "no-result-message">
+    <%= "一致する情報がヒットしませんでした" %></br>
+    <%= link_to "トップページに戻る", root_path, class: "click-btn" %>
+  </div>
+ <% end %>
+</div>
+
 
 <%= render "shared/footer" %>
