@@ -19,6 +19,7 @@
           </div>
         </div>
       <% end %>
+      
    </div>
 
 <%# Google Mapの表示 %>
@@ -73,7 +74,7 @@ function initMap(){
 
   })();
   <% end %>
-}
+};
 
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key= <%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
@@ -85,7 +86,7 @@ function initMap(){
     <%= link_to "トップページに戻る", root_path, class: "click-btn" %>
   </div>
  <% end %>
-</div>
 
+</div>
 
 <%= render "shared/footer" %>
