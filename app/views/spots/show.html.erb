@@ -16,28 +16,28 @@
       </div>
       <% if @spot.reviews.present? %>
         <tr>
-          <th class="detail-item">クチコミ評価</th>
+          <th class="detail-spot">クチコミ評価</th>
           <td id = "average-review", class="average-review-rating-<%= @spot.reviews.average(:overall_evaluation).round %>"></td>
         </tr>
       <% end %>
         <tr>
-          <th class="detail-item">店舗</th>
+          <th class="detail-spot">店舗</th>
           <td class="detail-value"><%= @spot.shop_name %></td>
         </tr>
         <tr>
-          <th class="detail-item">住所</th>
+          <th class="detail-spot">住所</th>
           <td class="detail-value"><%= @spot.address %></td>
         </tr>
         <tr>
-          <th class="detail-item">アクセス</th>
+          <th class="detail-spot">アクセス</th>
           <td class="detail-value"><%= @spot.access %></td>
         </tr>
         <tr>
-          <th class="detail-item">営業時間</th>
+          <th class="detail-spot">営業時間</th>
           <td class="detail-value"><%= @spot.opening_hours %></td>
         </tr>
         <tr>
-          <th class="detail-item">電話番号</th>
+          <th class="detail-spot">電話番号</th>
           <td class="detail-value"><%= @spot.phone_number %></td>
         </tr>
       </tbody>
