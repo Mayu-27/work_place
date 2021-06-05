@@ -19,8 +19,7 @@
           </div>
         </div>
       <% end %>
-      
-   </div>
+  </div>
 
 <%# Google Mapの表示 %>
 <div id='map'></div>
@@ -78,7 +77,6 @@ function initMap(){
 
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key= <%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
-
 
  <% else %>
   <div class = "no-result-message">
