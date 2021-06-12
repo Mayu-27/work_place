@@ -29,23 +29,23 @@
   </div>
 
   <div class = "review-lists-title"><%= @user.nickname %>さんのクチコミ一覧</div>
-　<div class = "review-lists">
+  <div class = "review-lists">
     <% if @reviews.present? %>
       <% @reviews.each_with_index do |review, index| %>
         <% if review.user_id == current_user.id %>
         <% review_exists = true %>
         <div class = "review-detail">
           <p class = "reviewed-spot-name"><%= link_to review.spot.shop_name, spot_path(review.spot) %></p>
-          <p class = "user-detail-overall_evaluation-<%= index %>"><% review.overall_evaluation %></p>
+          <p class = "reviewed_overall_evaluation-<%= index %>"><% review.overall_evaluation %></p>
           <div class = "reviewed-spot-image">
            <%= image_tag 'spot-sample-icon.png', class: 'spot-sample' %>
-        　</div>　
+          </div>
           <div class = "reviewed-spots">
             <%= link_to "クチコミを編集", edit_spot_review_path(review.spot.id, review.id), class: "mypage-btn" %>
             <%= link_to "クチコミを削除", spot_review_path(review.spot.id, review.id), method: :delete, class: "mypage-btn" %>
           </div>
         <script>
-          $('.user-detail-overall_evaluation-<%= index %>').raty({
+          $('.reviewed_overall_evaluation-<%= index %>').raty({
             size: 36,
             starOff:  '<%= asset_path('star-off.png') %>',
             starOn : '<%= asset_path('star-on.png') %>',
@@ -60,7 +60,7 @@
       <% end %>
 
     <% else %>
-    　<div class ="no-review-message">
+      <div class ="no-review-message">
         <%= "クチコミはまだありません。" %>
       </div>
     <% end %>

@@ -1,5 +1,5 @@
 /* 商品の概要 */
-.item-show {
+.spot-show {
   background-color: #f8f8f8;
   width: 100vw;
   display: flex;
@@ -181,7 +181,7 @@
   opacity: 0.8;
 }
 
-.item-explain-box{
+.spot-explain-box{
   margin-bottom: 30px
 }
 

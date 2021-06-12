@@ -1,5 +1,4 @@
 class SpotsController < ApplicationController
-  include AcceaCafeScraping
   before_action :search_spot, only: [:index, :search]
 
   def index
