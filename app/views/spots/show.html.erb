@@ -107,7 +107,6 @@
         </div>
       <% end %> 
  
-
   <script>
         $('.overall-evaliation-<%= index %>').raty({
           size: 36,
@@ -118,67 +117,53 @@
           readOnly: true,
           score: <%= review.overall_evaluation %>,
         })
-    
-    </script> 
-    <script>
-      $('.atmosphere-<%= index %>').raty({
-        size: 36,
-        starOff:  '<%= asset_path('star-off.png') %>',
-        starOn : '<%= asset_path('star-on.png') %>',
-        starHalf: '<%= asset_path('star-half.png') %>',
-        half: true,
-        readOnly: true,
-        score: <%= review.atmosphere %>,
-      })
-   
-    </script> 
-    <script>
-      $('.network_stability-<%= index %>').raty({
-        size: 36,
-        starOff:  '<%= asset_path('star-off.png') %>',
-        starOn : '<%= asset_path('star-on.png') %>',
-        starHalf: '<%= asset_path('star-half.png') %>',
-        half: true,
-        readOnly: true,
-        score: <%= review.network_stability %>,
-      })
-    </script> 
-    <script>
-      $('.facility-<%= index %>').raty({
-        size: 36,
-        starOff:  '<%= asset_path('star-off.png') %>',
-        starOn : '<%= asset_path('star-on.png') %>',
-        starHalf: '<%= asset_path('star-half.png') %>',
-        half: true,
-        readOnly: true,
-        score: <%= review.facility %>,
-      })
-    </script> 
-    <script>
-      $('.congestion-<%= index %>').raty({
-        size: 36,
-        starOff:  '<%= asset_path('star-off.png') %>',
-        starOn : '<%= asset_path('star-on.png') %>',
-        starHalf: '<%= asset_path('star-half.png') %>',
-        half: true,
-        readOnly: true,
-        score: <%= review.congestion %>,
-      })
-    </script> 
-    <script>
-      $('.corona_countermeasure-<%= index %>').raty({
-        size: 36,
-        starOff:  '<%= asset_path('star-off.png') %>',
-        starOn : '<%= asset_path('star-on.png') %>',
-        starHalf: '<%= asset_path('star-half.png') %>',
-        half: true,
-        readOnly: true,
-        score: <%= review.corona_countermeasure %>,
-      })
-    </script> 
-
+        $('.atmosphere-<%= index %>').raty({
+          size: 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          half: true,
+          readOnly: true,
+          score: <%= review.atmosphere %>,
+        })
+        $('.network_stability-<%= index %>').raty({
+          size: 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          half: true,
+          readOnly: true,
+          score: <%= review.network_stability %>,
+        })
+        $('.facility-<%= index %>').raty({
+          size: 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          half: true,
+          readOnly: true,
+          score: <%= review.facility %>,
+        })
+        $('.congestion-<%= index %>').raty({
+          size: 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          half: true,
+          readOnly: true,
+          score: <%= review.congestion %>,
+        })
+        $('.corona_countermeasure-<%= index %>').raty({
+          size: 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          half: true,
+          readOnly: true,
+          score: <%= review.corona_countermeasure %>,
+        })
+  </script> 
   <% end %>
 </div> 
- 
-
+  
 <%= render "shared/footer" %>
