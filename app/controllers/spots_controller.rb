@@ -3,7 +3,7 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all
-    @random = Spot.order('RAND()').limit(5)
+    @pickup_spots = Spot.order('RAND()').limit(5)
   end
 
   def show
@@ -13,7 +13,7 @@ class SpotsController < ApplicationController
   
   def search
     @results = @p.result
-    @top_result = @results.first
+    @first_result = @results.first
   end
 
   private

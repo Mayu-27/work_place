@@ -24,8 +24,8 @@
 
 
 
-  <% if @top_result.present? %>
-    var capital = {lat: <%= @top_result.latitude %>, lng: <%= @top_result.longitude %>};
+  <% if @first_result.present? %>
+    var capital = {lat: <%= @first_result.latitude %>, lng: <%= @first_result.longitude %>};
   <% else %>
     var capital = {lat: 35.68123620000001, lng:139.7671248};
   <% end %>

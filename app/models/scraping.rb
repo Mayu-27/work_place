@@ -9,11 +9,11 @@ class Scraping
     tables = doc.css("table")
 
     tables.each do | table |
-      get_table(table)
+      save_table(table)
     end
   end
 
-  def self.get_table(table)
+  def self.save_table(table)
     shop_name = table.css('tbody > tr[1] > td[2]')
     address = table.css('tbody > tr[2] > td[2]')
     access = table.css('tbody > tr[4] > td[2]')
