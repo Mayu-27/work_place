@@ -19,25 +19,70 @@
           </div>
         </div>
       <% end %>
+
+    <%# Google Mapの表示 %>
+    <div id='map'></div>
+    <style>
+    #map{
+      height: 700px;
+    }
+    </style>
+
+    <script>
+    function initMap(){
+      var capital = {lat: <%= @first_result.latitude %>, lng: <%= @first_result.longitude %>};
+      var mapArea = document.getElementById('map');
+      var mapOptions = {
+        center: capital,
+        zoom: 14,
+      };
+      var map = new google.maps.Map(mapArea, mapOptions);
+      
+      <% @results.each do |spot| %>
+      (function(){
+        var markerLatLng = new google.maps.LatLng({lat: <%= spot.latitude %>, lng: <%= spot.longitude %>}); 
+        
+
+        var contentString = '<div id="content">'+
+              '<div id="bodyContent">'+ 
+              '<%= link_to "#{spot.shop_name}", spot_path(spot), data: {"turbolinks" => false} %>'+
+              '</div>';
+      
+        var marker = new google.maps.Marker({
+          position: markerLatLng,
+          map: map, 
+          icon: {
+            url: '/images/marker-icon.png',
+            scaledSize: new google.maps.Size(30, 35), 
+            anchor: new google.maps.Point(20, 65) 
+          } 
+          }); 
+    
+        var infoWindow = new google.maps.InfoWindow({ 
+          position: markerLatLng,
+          content: contentString
+        });
+        
+        marker.addListener('mouseover', function() { 
+          infoWindow.open(mapArea, marker); 
+        });
+      
+      })();
+      <% end %>
+    }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key= <%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+    <%# Google Mapの表示 %>
   </div>
 
-
-
-
-  <% if @first_result.present? %>
-    var capital = {lat: <%= @first_result.latitude %>, lng: <%= @first_result.longitude %>};
   <% else %>
-    var capital = {lat: 35.68123620000001, lng:139.7671248};
+    <div class = "no-result-message">
+      <%= "一致する情報がヒットしませんでした" %></br>
+      <%= link_to "トップページに戻る", root_path, class: "click-btn" %>
+    </div>
   <% end %>
-
-  <%= render partial: "shared/google_map", locals: { marker_spots: @spots }%>
  
-  <div class = "no-result-message">
-    <%= "一致する情報がヒットしませんでした" %></br>
-    <%= link_to "トップページに戻る", root_path, class: "click-btn" %>
-  </div>
-  <% end %>
-
 </div>
 
 <%= render "shared/footer" %>
