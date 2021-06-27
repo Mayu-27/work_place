@@ -7,7 +7,9 @@
 
   <%= render 'shared/review_error_messages', model: @review %>
 
-  <%= render 'shared/review_form', model: @spot %>
+  <%= form_with model: @review, url: spot_reviews_path(spot_id: @spot), method: :post, local: true do |f| %>
+    <%= render partial: 'shared/review_form', model: @spot, locals: {f: f} %>
+  <% end %>
 
 <%= render "shared/footer" %>
 

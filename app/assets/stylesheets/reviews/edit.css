@@ -16,8 +16,8 @@
 }
 
 .form-control{
-  width: 70vw;
-  height: 90px;
+  width: 50%;
+  height: 150px;
   margin-top: 5px;
   display: block;
 }

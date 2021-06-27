@@ -1,4 +1,3 @@
-<%= form_with model: @review, url: spot_reviews_path(spot_id: @spot), method: :post, local: true do |f| %>
 
   <div class="info_form">
   <div class = "main-form">
@@ -39,10 +38,17 @@
         <%= f.label :corona_countermeasure,'コロナ対策', class:'col-md-3 col-form-label' %>
         <%= f.hidden_field :corona_countermeasure, class:'col-md-3 col-form-label' %>
       </div>
-      <div class="submit-btn">
-        <%= f.submit '投稿する', class:"btn btn-success" %>
-      </div>  
-  <% end %>
+
+      <% if local_assigns[:edit_flag].present? %>
+        <div class="submit-btn">
+          <%= f.submit '更新する', class:"btn btn-success" %>
+        </div>  
+      <% else %>
+        <div class="submit-btn">
+          <%= f.submit '投稿する', class:"btn btn-success" %>
+        </div>
+      <% end %>
+      
   </div>
 
 <script>
