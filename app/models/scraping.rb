@@ -2,7 +2,6 @@ require 'nokogiri'
 require 'open-uri'
 
 class Scraping
-
   def self.set_table
     url = "https://goworkship.com/magazine/tokyo-coworking-space/"
     doc = Nokogiri::HTML(open(url),nil,"utf-8")
@@ -27,5 +26,4 @@ class Scraping
     spot.opening_hours = opening_hour.text
     spot.save
   end
-
 end
