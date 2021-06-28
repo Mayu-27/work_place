@@ -3,7 +3,7 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all
-    @pickup_spots = Spot.order('RAND()').limit(5)
+    @ranked_top5 = Spot.joins(:reviews).order("overall_evaluation desc").limit(5)
   end
 
   def show

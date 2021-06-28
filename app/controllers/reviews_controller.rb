@@ -41,7 +41,6 @@ class ReviewsController < ApplicationController
   end
 
   private
-
   def review_params
     params.require(:review).permit(:overall_evaluation, :comment, :atmosphere, :network_stability, :facility, :congestion, :corona_countermeasure).merge(
       user_id: current_user.id, spot_id: params[:spot_id]
