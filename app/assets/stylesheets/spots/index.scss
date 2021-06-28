@@ -274,7 +274,7 @@ a {
   font-size: 2vh;
 }
 
-.favorite-list-title{
+.ranking-title{
   text-align: center;
     font-size: 6.5vh;
     font-weight: bold;
@@ -283,7 +283,7 @@ a {
     position: relative;
 }
 
-.spot-contents > .favorite-list-title::after {
+.spot-contents > .ranking-title::after {
   content: '';
   width: 57vw;
   height: 4px;
@@ -306,7 +306,7 @@ a {
   
 }
 
-.pickup-spot-image{
+.ranked-spot-image{
   text-align: center;
 }
 
