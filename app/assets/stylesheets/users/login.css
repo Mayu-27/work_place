@@ -10,8 +10,9 @@
   border: 1px solid #FF6347;
   color: #fff;
   line-height: 48px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .login-flash-message {
@@ -29,3 +30,21 @@
   background-size: cover;
 }
 
+.guest-login-box{
+  padding: 30px 30px 0 30px;
+  width: 250px;
+  margin: auto;
+  font-size: 16px;
+}
+
+.guest-login-title{
+  text-align: center;
+}
+
+.guest-id{
+  text-align: left;
+}
+
+.guest-password{
+  text-align: left;
+}
