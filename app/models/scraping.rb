@@ -3,11 +3,11 @@ require 'open-uri'
 
 class Scraping
   def self.set_table
-    url = "https://goworkship.com/magazine/tokyo-coworking-space/"
-    doc = Nokogiri::HTML(open(url),nil,"utf-8")
-    tables = doc.css("table")
+    url = 'https://goworkship.com/magazine/tokyo-coworking-space/'
+    doc = Nokogiri::HTML(open(url), nil, 'utf-8')
+    tables = doc.css('table')
 
-    tables.each do | table |
+    tables.each do |table|
       save_table(table)
     end
   end

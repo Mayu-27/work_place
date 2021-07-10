@@ -3,7 +3,7 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all
-    @ranked_top5 = Spot.joins(:reviews).order("overall_evaluation desc").limit(5)
+    @ranked_top5 = Spot.joins(:reviews).order('overall_evaluation desc').limit(5)
     @first_spot = @spots.first
   end
 
@@ -11,13 +11,14 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     @reviews = Review.all.includes(:user)
   end
-  
+
   def search
     @results = @p.result
     @first_result = @results.first
   end
 
   private
+
   def search_spot
     @p = Spot.ransack(params[:q])
   end
