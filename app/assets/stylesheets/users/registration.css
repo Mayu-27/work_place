@@ -79,13 +79,12 @@
 
 .input-name-wrap {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
 .input-name {
   width: 130px;
-  margin: 5px 20px 0 20px;
+  margin: 5px 20px 0 0;
   height: 48px;
   line-height: 30px;
   padding: 10px 16px 8px;
@@ -125,7 +124,7 @@
 
 
 .form-bottom-text {
-  font-size: 15px;
+  font-size: 16px;
   margin-top: 10px;
   text-align: center;
 }
@@ -151,8 +150,9 @@
   border: 1px solid #FF6347;
   color: #fff;
   line-height: 48px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .register-info {
@@ -164,4 +164,14 @@
 
 .user_avatar{
   width: 100%;
+}
+
+.indispensable{
+  background: #ea352d;
+  color: #fff;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: bold;
 }
