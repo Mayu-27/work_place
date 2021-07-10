@@ -4,6 +4,7 @@ class SpotsController < ApplicationController
   def index
     @spots = Spot.all
     @ranked_top5 = Spot.joins(:reviews).order("overall_evaluation desc").limit(5)
+    @first_spot = @spots.first
   end
 
   def show

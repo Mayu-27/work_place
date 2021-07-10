@@ -92,9 +92,7 @@
   </div>
 </div>
 
-<%= render partial: "shared/google_map", locals: { marker_spots: @spots }%>
-  
-<script src="https://maps.googleapis.com/maps/api/js?key= <%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+<%= render partial: "shared/google_map", locals: { marker_spots: @spots, first_spot: @first_spot }%>
 
 <%= render "shared/second_footer" %>
 <%= render "shared/footer" %>
