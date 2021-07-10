@@ -30,12 +30,18 @@ a {
 
 .store-btn {
   display: flex;
-  margin-top: 24px;
+  // margin-top: 24px;
 }
 
 .apple-btn {
   margin-right: 1vw;
   height: 9vh;
+  padding-top: 12px;
+}
+
+.google-btn {
+  height: 80px;
+  width: auto;
 }
 
 .select-reason-contents {
@@ -135,11 +141,6 @@ a {
 .store-btn {
   display: flex;
   margin-top: 24px;
-}
-
-.apple-btn {
-  margin-right: 1vw;
-  height: 9vh;
 }
 
 .feature-contents {
@@ -338,4 +339,9 @@ a {
 .rank-icon{
   width: 25px;
   height: 25px;
+}
+
+.store-btn{
+  display: flex;
+  margin-top: 24px;
 }
