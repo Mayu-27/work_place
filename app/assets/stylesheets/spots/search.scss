@@ -5,7 +5,6 @@
   align-items: center;
   padding: 5vh 10vw;
   justify-content: center;
-  margin: 10px auto;
 }
 
 .searched-lists{
@@ -37,7 +36,7 @@
   width:80%;
 }
 
-.no-result-message {
+.no-result-box {
   margin: 0 auto;
   padding: 30px;
   box-shadow: 0 0 10px rgb(41, 41, 41);
@@ -45,6 +44,7 @@
   box-sizing: border-box;
   text-align: center;
   width: 70%;
+  height: 180px;
 }
   
 .click-btn {
@@ -58,3 +58,4 @@
   display: inline-block;
   margin: 20px;
 }
+

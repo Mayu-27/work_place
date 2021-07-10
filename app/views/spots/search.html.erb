@@ -20,15 +20,17 @@
         </div>
       <% end %>
     </div>
+    
   <% else %>
-    <div class = "no-result-message">
-      <%= "一致する情報がヒットしませんでした" %></br>
+    <div class = "no-result-box">
+      <%= "一致する情報がヒットしませんでした" %><br>
       <%= link_to "トップページに戻る", root_path, class: "click-btn" %>
     </div>
   <% end %>
 </div>
 
-<%= render partial: "shared/google_map", locals: { marker_spots: @results, first_spot: @first_result}%>
-  
+<% if @results.present? %>
+  <%= render partial: "shared/google_map", locals: { marker_spots: @results, first_spot: @first_result}%>
+<% end %>
 
 <%= render "shared/footer" %>
