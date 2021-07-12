@@ -7,6 +7,7 @@ background-color: white;
 box-sizing: border-box;
 text-align: center;
 width: 70%;
+margin: 0 auto;
 }
 
 .click-btn {
@@ -21,3 +22,6 @@ width: 70%;
   margin: 20px;
 }
 
+.contents-row{
+  padding: 80px;
+}

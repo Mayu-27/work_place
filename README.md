@@ -26,16 +26,16 @@ http://co-woriking-spot.com/
 
 # DEMO
 ## トップページ（検索画面）
-[![Image from Gyazo](https://i.gyazo.com/cc94a39933db29c045d7f646f8b69955.gif)](https://gyazo.com/cc94a39933db29c045d7f646f8b69955)
+[![Image from Gyazo](https://i.gyazo.com/de7fb3477afcbb5d79e8fb61af13b9c2.gif)](https://gyazo.com/de7fb3477afcbb5d79e8fb61af13b9c2)
 
 ## トップページ（Google Mapでの店舗一覧表示）
-[![Image from Gyazo](https://i.gyazo.com/1ffe617d1a4828d072cc598ed385e3e5.gif)](https://gyazo.com/1ffe617d1a4828d072cc598ed385e3e5)
+[![Image from Gyazo](https://i.gyazo.com/31f83f3acdbb6ab6e1531dc9e9063149.gif)](https://gyazo.com/31f83f3acdbb6ab6e1531dc9e9063149)
 
 ## レビュー投稿
-[![Image from Gyazo](https://i.gyazo.com/b405c864799e6a5c8b124f5523ae1a02.gif)](https://gyazo.com/b405c864799e6a5c8b124f5523ae1a02)
+[![Image from Gyazo](https://i.gyazo.com/a8a3e076685d08dcfbc5a785e56dfbcc.gif)](https://gyazo.com/a8a3e076685d08dcfbc5a785e56dfbcc)
 
 ## お気に入り登録・削除
-[![Image from Gyazo](https://i.gyazo.com/d7b095f7892e4c8c610e16edcdd49f9a.gif)](https://gyazo.com/d7b095f7892e4c8c610e16edcdd49f9a)
+[![Image from Gyazo](https://i.gyazo.com/1fd5c48d2e61fbe66840f548de3d8a22.gif)](https://gyazo.com/1fd5c48d2e61fbe66840f548de3d8a22)
 
 # 使用技術
 ## フロントエンド
