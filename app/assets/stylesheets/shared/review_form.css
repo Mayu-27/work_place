@@ -27,7 +27,7 @@
 }
 
 .submit-btn{
-  margin-top: 25px;
+  margin: 25px 0px 60px 0px;
 }
 
 .review-explain{
@@ -71,4 +71,7 @@
   display: flex;
 }
 
+.comment-control{
+  width: 90px;
+}
 
