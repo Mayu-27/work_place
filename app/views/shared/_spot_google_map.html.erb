@@ -1,13 +1,14 @@
 <div id='map'></div>
 <style>
 #map{
-  height: 700px;
+  height: 400px;
 }
 </style>
 
 <script>
+
 function initMap(){
-  var capital = {lat: <%= first_spot.latitude %>, lng: <%= first_spot.longitude %>};
+  var capital = {lat: <%= spot.latitude %>, lng: <%= spot.longitude %>};
   var mapArea = document.getElementById('map');
   var mapOptions = {
     center: capital,
@@ -15,15 +16,8 @@ function initMap(){
   };
   var map = new google.maps.Map(mapArea, mapOptions);
   
-  <% marker_spots.each do |spot| %>
   (function(){
     var markerLatLng = new google.maps.LatLng({lat: <%= spot.latitude %>, lng: <%= spot.longitude %>}); 
-    
-
-    var contentString = '<div id="content">'+
-          '<div id="bodyContent">'+ 
-          '<%= link_to "#{spot.shop_name}", spot_path(spot), data: {"turbolinks" => false} %>'+
-          '</div>';
   
     var marker = new google.maps.Marker({
       position: markerLatLng,
@@ -34,21 +28,12 @@ function initMap(){
         anchor: new google.maps.Point(20, 65) 
 		  } 
       }); 
- 
-    var infoWindow = new google.maps.InfoWindow({ 
-      position: markerLatLng,
-      content: contentString
-    });
     
     marker.addListener('mouseover', function() { 
       infoWindow.open(mapArea, marker); 
     });
-  
   })();
-  <% end %>
 }
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key= <%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
-
-

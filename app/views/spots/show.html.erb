@@ -40,6 +40,10 @@
           <th class="detail-spot">電話番号</th>
           <td class="detail-value"><%= @spot.phone_number %></td>
         </tr>
+        <tr>
+          <th class="detail-spot">地図</th>
+          <td class="detail-map"><%= render partial: "shared/spot_google_map", locals: { spot: @spot } %></td>
+        </tr>
       </tbody>
     </table>
 
