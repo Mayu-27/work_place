@@ -1,7 +1,7 @@
-<% if @review.errors.any? %>
+<% if spot.reviews.errors.any? %>
 <div class="error-alert">
   <ul>
-    <%  @review.errors.full_messages.each do |message| %>
+    <% spot.reviews.errors.full_messages.each do |message| %>
     <li class='error-message'><%= message %></li>
     <% end %>
   </ul>

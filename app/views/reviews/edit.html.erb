@@ -5,10 +5,10 @@
     クチコミ編集
   </div>
 
-<%= render 'shared/review_error_messages', model: @review %>
+<%#= render 'shared/review_error_messages', {spot: @spot} %>
 
-<%= form_with model: @review, url: spot_review_path(spot_id: @spot), method: :patch, local: true do |f| %>
-  <%= render partial: 'shared/review_form', model: @review, locals: {f: f} %>
+<%= form_with(model: @spot, url: spot_review_path(spot_id: @spot), method: :patch, local: true) do |f| %>
+  <%= render partial: 'shared/review_form', model: @spot, locals: {f: f} %>
 <% end %>
 
 <%= render "shared/footer" %>

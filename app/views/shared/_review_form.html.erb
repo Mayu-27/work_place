@@ -12,7 +12,11 @@
 
     <div class="comment_form">
       <%= f.label :comment, 'コメント ',class: "comment-control" %>
-      <%= f.text_area :comment, class: "form-control", rows: "8", placeholder:'まずは投稿してみましょう！' %>
+      <% if @spot.reviews.present? %>
+        <%= f.text_area :comment, class: "form-control", rows: "8", placeholder:'まずは投稿してみましょう！' %>
+      <% else %>
+        <%= f.text_area :comment, class: "form-control", rows: "8", placeholder:'まずは投稿してみましょう！' %>
+      <% end %>
     </div> 
   </div>
   <div class = "sub-form">
@@ -48,7 +52,7 @@
           <%= f.submit '投稿する', class:"btn btn-success" %>
         </div>
       <% end %>
-      
+
   </div>
 
 <script>
