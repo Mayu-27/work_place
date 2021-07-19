@@ -1,6 +1,10 @@
 <%= render "shared/header" %>
 
 <div class = "review-submit-box">
+  <div class = "breadcrumb">
+    <% breadcrumb :reviews %>
+    <%= breadcrumbs separator: " &rsaquo; " %>
+  </div>
   <div class= "page-title">
     クチコミ編集
   </div>

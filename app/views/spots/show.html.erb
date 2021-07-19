@@ -1,10 +1,13 @@
 <%= render "shared/header" %>
 
 <div class="spot-show">
+    <div class = "breadcrumb">
+      <% breadcrumb :spots %>
+      <%= breadcrumbs separator: " &rsaquo; " %>
+    </div>
     <div class="spot-explain-box">
       <span><%= "店舗情報" %></span>
     </div>
-    
     <table class="detail-table">
       <tbody>
       <div class = "shop_img">

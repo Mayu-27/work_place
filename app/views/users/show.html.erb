@@ -1,6 +1,13 @@
 <%= render "shared/header" %>
 
 <div class = "user-info-box">
+  <div class = "breadcrumb">
+    <% breadcrumb :users %>
+    <%= breadcrumbs separator: " &rsaquo; " %>
+  </div>
+  <div class = "breadcrumbs">
+    <% breadcrumb :users %>
+  </div>
   <div class = "favorite-lists-title"><%= @user.nickname %>さんのお気に入り一覧</div>
   <div class = "favorite-lists">
     <% if @favorites.present?%>
