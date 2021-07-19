@@ -9,7 +9,7 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
-    @reviews = Review.all.includes(:user)
+    @reviews = @spot.reviews
   end
 
   def search
