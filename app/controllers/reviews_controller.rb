@@ -21,6 +21,7 @@ class ReviewsController < ApplicationController
 
   def edit
     @spot = Spot.find(params[:spot_id])
+    @review = Review.find(params[:id])
   end
 
   def update
